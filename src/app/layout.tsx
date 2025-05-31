@@ -5,43 +5,9 @@ export const metadata: Metadata = {
   title: "raph milla",
   description: "Producer // DJ - Live Stream Schedule",
   icons: {
-    icon: [
-      {
-        url: '/favicon-16x16.png',
-        sizes: '16x16',
-        type: 'image/png',
-      },
-      {
-        url: '/favicon-32x32.png',
-        sizes: '32x32',
-        type: 'image/png',
-      },
-      {
-        url: '/favicon.ico',
-        sizes: 'any',
-      },
-    ],
-    apple: [
-      {
-        url: '/apple-touch-icon.png',
-        sizes: '180x180',
-        type: 'image/png',
-      },
-    ],
-    other: [
-      {
-        rel: 'icon',
-        url: '/android-chrome-192x192.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        rel: 'icon',
-        url: '/android-chrome-512x512.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-    ],
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
   },
   manifest: '/site.webmanifest',
 };
@@ -53,6 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
+        <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#0a0a0a" />
+      </head>
       <body>{children}</body>
     </html>
   );
