@@ -1,168 +1,567 @@
+/* ==============================================
+   GLOBAL STYLES
+   ============================================== */
 .page {
-  --gray-rgb: 0, 0, 0;
-  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
-  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
-  min-height: 100svh;
-  padding: 80px;
-  gap: 64px;
-  font-family: var(--font-geist-sans);
+  min-height: 100vh;
+  background-color: var(--background);
 }
 
-@media (prefers-color-scheme: dark) {
-  .page {
-    --gray-rgb: 255, 255, 255;
-    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
-    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-  }
+/* ==============================================
+   HERO SECTION - DESKTOP
+   ============================================== */
+.hero {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  font-family: var(--font-clash-display);
+  padding: 1rem;
 }
 
-.main {
+.heroContainer {
+  position: relative;
+  background: url('/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  min-height: 108vh;
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  justify-content: space-between;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
-  display: flex;
-  gap: 16px;
-}
-
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
-  border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
-  cursor: pointer;
-  display: flex;
+/* Desktop Hero Rows */
+.topRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
-}
-
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
-}
-
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
-}
-
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-.footer a {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.footer img {
+  gap: 1rem;
   flex-shrink: 0;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+.middleRow {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  margin-top: 5rem;
+  gap: 1rem;
+  flex: 1;
+  align-content: center;
+}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.bottomRow {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-shrink: 0;
+}
 
-  .footer a:hover {
-    text-decoration: underline;
-    text-underline-offset: 4px;
+/* Desktop Hero Elements */
+.bookings {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+  transition: color 0.2s ease;
+  cursor: pointer;
+  justify-self: center;
+}
+
+.bookings:hover {
+  color: var(--red-accent);
+}
+
+.location {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 500;
+  justify-self: end;
+}
+
+.socialLeft {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.2s ease;
+  justify-self: start;
+}
+
+.socialRight {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.2s ease;
+  justify-self: end;
+}
+
+.socialLeft:hover,
+.socialRight:hover {
+  color: var(--red-accent);
+}
+
+.pageTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--foreground);
+  text-align: center;
+  justify-self: center;
+}
+
+.raphLogo {
+  width: 100%;
+  height: auto;
+}
+
+/* ==============================================
+   HERO SECTION - MOBILE
+   ============================================== */
+.mobileHeroContainer {
+  position: relative;
+  background: url('/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: var(--border-radius);
+  padding: 0;
+  min-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.mobileHeroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  min-height: 95vh;
+}
+
+.mobileTopRow {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  padding: 2rem 1.5rem 0 1.5rem;
+}
+
+.mobileMiddleRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.5rem;
+  flex: 1;
+  justify-content: center;
+  padding: 0 2rem;
+}
+
+.mobileBottomRow {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  padding: 0 1.5rem 1rem 1.5rem;
+}
+
+.mobileMillaLogo,
+.mobileRaphLogo {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mobilePageTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin: 0;
+}
+
+.mobileSocials {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.mobileSocialLink {
+  font-size: 2rem;
+  color: rgba(255, 255, 255, 1);
+  transition: color 0.2s ease;
+}
+
+.mobileSocialLink:hover {
+  color: var(--red-accent);
+}
+
+/* ==============================================
+   LIVESTREAM SECTION
+   ============================================== */
+.livestream {
+  font-family: var(--font-clash-display);
+  width: 100%;
+  margin: 4rem 0 0;
+}
+
+.livestreamContainer {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.livestreamBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/maxi 1.png');
+  background-size: content;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.livestreamContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 100vh;
+  padding: 3rem;
+  text-align: center;
+}
+
+.schedule {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.scheduleItem {
+  font-size: 5rem;
+  font-weight: 700;
+  color: var(--red-accents);
+  line-height: 80.688%;
+  letter-spacing: 1px;
+}
+
+.watchLiveButton {
+  background: transparent;
+  border: 2px solid var(--red-accents);
+  color: var(--red-accents);
+  font-family: var(--font-neuropolitical);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+.watchLiveButton:hover {
+  background-color: var(--red-accents);
+  color: var(--background);
+}
+
+/* ==============================================
+   FOOTER SECTION - DESKTOP
+   ============================================== */
+.footer {
+  font-family: var(--font-clash-display);
+  width: 100%;
+  max-width: 1440px;
+  margin: 4rem auto 0;
+  padding: 1rem;
+}
+
+.footerContainer {
+  position: relative;
+  background: #1D1D1D;
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.footerSplit {
+  display: flex;
+  min-height: 50vh;
+  gap: 2rem;
+}
+
+.footerEmptyLeft {
+  flex: 1;
+}
+
+.footerContentRight {
+  margin-top: 4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+  gap: 3rem;
+  padding-left: 2rem;
+}
+
+.footerRow1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footerRow2,
+.footerRow3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.socialLinkHeader {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 1);
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.socialLink {
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.socialLink:hover {
+  color: var(--red-accent);
+}
+
+.timedisplay {
+  font-size: 0.9rem;
+}
+
+.footerBottomRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.millaLogo {
+  width: 100%;
+  height: auto;
+}
+
+/* ==============================================
+   FOOTER SECTION - MOBILE
+   ============================================== */
+.mobileFooterContainer {
+  position: relative;
+  background: #1D1D1D;
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.mobileFooterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  width: 100%;
+  gap: 2rem;
+}
+
+.mobileFooterRow {
+  padding-left: .5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.mobileFooterRowDouble {
+  padding-left: .5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  text-align: left;
+}
+
+.mobileFooterCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.mobileSocialLinkHeader {
+  font-size: 1.3rem;
+  color: rgba(255, 255, 255, 1);
+  line-height: 1.4;
+  font-weight: 700;
+  margin: 0;
+}
+
+.mobileFooterContent .mobileSocialLink {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.mobileFooterContent .mobileSocialLink:hover {
+  color: var(--red-accent);
+}
+
+.mobileTimeDisplay {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 1);
+  margin: 0;
+}
+
+.mobileFooterLogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.mobileFooterLogoImg {
+  width: 100%;
+  height: auto;
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+@media (max-width: 768px) {
+  .page {
+    padding: 0;
+  }
+  
+  .livestream {
+    margin-top: 2rem;
+  }
+  
+  .livestreamContainer {
+    height: 70vh;
+  }
+  
+  .livestreamBackground {
+    background: url('/maxiMobile.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+  
+  .livestreamContent {
+    padding: 2rem 0;
+  }
+  
+  .scheduleItem {
+    font-size: 1.2rem;
+  }
+  
+  .schedule {
+    margin-bottom: 2rem;
+  }
+  
+  .watchLiveButton {
+    padding: 0.8rem 2rem;
+    font-size: 0.9rem;
   }
 }
 
-@media (max-width: 600px) {
-  .page {
-    padding: 32px;
-    padding-bottom: 80px;
+@media (max-width: 480px) {
+  .mobileHeroContainer {
+    min-height: 95vh;
+    border-radius: 16px;
   }
-
-  .main {
-    align-items: center;
+  
+  .mobileTopRow {
+    padding: 1.5rem 1rem 0 1rem;
   }
-
-  .main ol {
-    text-align: center;
+  
+  .mobileBottomRow {
+    padding: 0 1rem 2rem 1rem;
   }
-
-  .ctas {
-    flex-direction: column;
+  
+  .mobileMiddleRow {
+    gap: 1.2rem;
+    padding: 0 1.5rem;
   }
-
-  .ctas a {
-    font-size: 14px;
-    height: 40px;
-    padding: 0 16px;
+  
+  .mobilePageTitle {
+    font-size: 2rem;
   }
-
-  a.secondary {
-    min-width: auto;
+  
+  .mobileSocials {
+    gap: 0.8rem;
   }
-
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
+  
+  .mobileSocialLink {
+    font-size: 1.3rem;
+  }
+  
+  .livestreamBackground {
+    background: url('/maxiMobile.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .livestreamContent {
+    padding: 1.5rem 0;
     justify-content: center;
   }
+  
+  .scheduleItem {
+    font-size: 2rem;
+  }
+  
+  .watchLiveButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 360px) {
+  .mobileHeroContainer {
+    border-radius: 12px;
+  }
+  
+  .mobileTopRow {
+    padding: 0.6rem 0.8rem 0 0.8rem;
+  }
+  
+  .mobileBottomRow {
+    padding: 0 0.8rem 0.6rem 0.8rem;
+  }
+  
+  .mobileMiddleRow {
+    padding: 0 1rem;
+  }
+  
+  .mobilePageTitle {
+    font-size: 1.4rem;
+  }
+  
+  .mobileSocialLink {
+    font-size: 0.9rem;
   }
 }

@@ -1,11 +1,32 @@
+@font-face {
+  font-family: 'Neuropolitical';
+  src: url('/fonts/Neuropolitical Rg.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ClashDisplay';
+  src: url('/fonts/ClashDisplay-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #171717;
+  --foreground: #ededed;
+  --red-accent: #FF343E;
+  --red-accents: #FF535B;
+  --border-radius: 24px;
+  --font-neuropolitical: 'Neuropolitical', sans-serif;
+  --font-clash-display: 'ClashDisplay', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #171717;
     --foreground: #ededed;
   }
 }
@@ -19,9 +40,11 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  padding: 0;
 }
 
 * {
@@ -33,6 +56,12 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 
 @media (prefers-color-scheme: dark) {
