@@ -60,8 +60,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.8;
-  transition: opacity 0.2s ease;
+  opacity: 1;
 }
 
 @media (prefers-color-scheme: dark) {

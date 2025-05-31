@@ -64,7 +64,6 @@
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 1);
   font-weight: 500;
-  transition: color 0.2s ease;
   cursor: pointer;
   justify-self: center;
 }
@@ -83,14 +82,12 @@
 .socialLeft {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 1);
-  transition: color 0.2s ease;
   justify-self: start;
 }
 
 .socialRight {
   font-size: 1.2rem;
   color: rgba(255, 255, 255, 1);
-  transition: color 0.2s ease;
   justify-self: end;
 }
 
