@@ -1,7 +1,7 @@
 {
-  "name": "raph milla",
-  "short_name": "raph milla",
-  "description": "Producer // DJ - Live Stream Schedule",
+  "name": "Raph Milla - Producer // DJ",
+  "short_name": "Raph Milla",
+  "description": "Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,9 +14,12 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ff4444",
+  "theme_color": "#0a0a0a",
   "background_color": "#0a0a0a",
   "display": "standalone",
   "start_url": "/",
-  "scope": "/"
+  "scope": "/",
+  "orientation": "portrait",
+  "categories": ["music", "entertainment"],
+  "lang": "en"
 } 
