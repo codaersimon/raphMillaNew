@@ -19,7 +19,7 @@
 
 .heroContainer {
   position: relative;
-  background: url('/bg.png');
+  background: url('/bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -114,7 +114,7 @@
    ============================================== */
 .mobileHeroContainer {
   position: relative;
-  background: url('/bg.png');
+  background: url('/bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
