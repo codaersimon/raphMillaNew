@@ -83,14 +83,22 @@ export default function RootLayout({
         <link rel="preload" href="/fonts/ClashDisplay-Bold.otf" as="font" type="font/otf" crossOrigin="" />
         <link rel="preload" href="/fonts/Neuropolitical Rg.otf" as="font" type="font/otf" crossOrigin="" />
         
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
-        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        {/* Favicons - iOS Safari specific order */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
+        <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
+        <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/android-chrome-192x192.png" sizes="192x192" type="image/png" />
         <link rel="icon" href="/android-chrome-512x512.png" sizes="512x512" type="image/png" />
         <link rel="manifest" href="/site.webmanifest" />
+        
+        {/* iOS Safari specific meta tags */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Raph Milla" />
         <meta name="theme-color" content="#0a0a0a" />
+        <meta name="msapplication-TileColor" content="#0a0a0a" />
+        
         <link rel="canonical" href="https://raphmilla.com" />
         
         {/* JSON-LD Structured Data */}
