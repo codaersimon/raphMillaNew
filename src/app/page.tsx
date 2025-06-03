@@ -67,8 +67,8 @@ function DesktopHero() {
       
       {/* Middle row */}
       <div className={styles.middleRow}>
-        <a href="https://www.instagram.com/raphmillaa/" className={styles.socialLeft}>@raphmillaa</a>
-        <h1 className={styles.pageTitle}>PRODUCER // DJ</h1>
+        <a href="https://www.instagram.com/raphmillaa/" className={styles.socialLeft}>@raphmilla</a>
+        <h1 className={styles.pageTitle}>PRODUCER <span className={styles.redSlash}>{'//'}</span> DJ</h1>
         <a href="https://www.twitch.tv/millagoeslive" className={styles.socialRight}>@millagoeslive</a>
       </div>
       
@@ -104,12 +104,38 @@ function MobileHero() {
           />
         </div>
         
-        {/* Middle row: Page title and social links */}
+        {/* Middle row: Page title, tagline and social links */}
         <div className={styles.mobileMiddleRow}>
-          <h1 className={styles.mobilePageTitle}>PRODUCER // DJ</h1>
-          <div className={styles.mobileSocials}>
-            <a href="https://www.instagram.com/raphmillaa/" className={styles.mobileSocialLink}>@raphmillaa</a>
-            <a href="https://www.twitch.tv/millagoeslive" className={styles.mobileSocialLink}>@millagoeslive</a>
+          <h1 className={styles.mobilePageTitle}>PRODUCER <span className={styles.redSlash}>{'//'}</span> DJ</h1>
+          <p className={styles.mobileTagline}>LISTEN <span className={styles.redSlash}>{'//'}</span> WATCH <span className={styles.redSlash}>{'//'}</span> CONNECT</p>
+          <div className={styles.mobileHeroSocialIcons}>
+            <a href="https://www.youtube.com/@raphMilla" className={styles.heroSocialIcon} aria-label="YouTube">
+              <Image 
+                src="/ICONyoutube.svg" 
+                alt="YouTube"
+                width={36}
+                height={36}
+                className={styles.heroSocialIconImg}
+              />
+            </a>
+            <a href="https://www.tiktok.com/@raphmilla" className={styles.heroSocialIcon} aria-label="TikTok">
+              <Image 
+                src="/ICONtiktok.svg" 
+                alt="TikTok"
+                width={36}
+                height={36}
+                className={styles.heroSocialIconImg}
+              />
+            </a>
+            <a href="https://www.instagram.com/raphmillaa/" className={styles.heroSocialIcon} aria-label="Instagram">
+              <Image 
+                src="/ICONinstagram.svg" 
+                alt="Instagram"
+                width={36}
+                height={36}
+                className={styles.heroSocialIconImg}
+              />
+            </a>
           </div>
         </div>
         
@@ -145,11 +171,15 @@ function DesktopFooter() {
             </div>
           </div>
           
-          {/* Row 2: Instagram left, YouTube right */}
+          {/* Row 2: Instagram left, TikTok center, YouTube right */}
           <div className={styles.footerRow2}>
             <div className={styles.footerInstagram}>
               <p className={styles.socialLinkHeader}>INSTAGRAM</p>
               <a href="https://www.instagram.com/raphmillaa/" className={styles.socialLink}>@raphmilla</a>
+            </div>
+            <div className={styles.footerTiktok}>
+              <p className={styles.socialLinkHeader}>TIKTOK</p>
+              <a href="https://www.tiktok.com/@raphmilla" className={styles.socialLink}>@raphmilla</a>
             </div>
             <div className={styles.footerYoutube}>
               <p className={styles.socialLinkHeader}>YOUTUBE</p>
@@ -157,12 +187,13 @@ function DesktopFooter() {
             </div>
           </div>
           
-          {/* Row 3: Mail left, Local Time right */}
+          {/* Row 3: Mail left, empty center, Local Time right */}
           <div className={styles.footerRow3}>
             <div className={styles.footerMail}>
-              <p className={styles.socialLinkHeader}>MAIL</p>
+              <p className={styles.socialLinkHeader}>CONTACT</p>
               <p><a href="mailto:bookings@raphmilla.com" className={styles.socialLink}>bookings@raphmilla.com</a></p>
             </div>
+            <div></div>
             <div className={styles.footerLocalTime}>
               <p className={styles.socialLinkHeader}>LOCAL TIME</p>
               <p className={styles.timedisplay}><TimeDisplay /></p>
@@ -190,34 +221,65 @@ function MobileFooter() {
   return (
     <div className={styles.mobileFooterContainer}>
       <div className={styles.mobileFooterContent}>
-        {/* TWITCH (centered) */}
+        {/* CONTACT (formerly MAIL) */}
         <div className={styles.mobileFooterRow}>
-          <p className={styles.mobileSocialLinkHeader}>TWITCH</p>
-          <a href="https://www.twitch.tv/millagoeslive" className={styles.mobileSocialLink}>@millagoeslive</a>
-        </div>
-        
-        {/* INSTAGRAM | YOUTUBE (side by side) */}
-        <div className={styles.mobileFooterRowDouble}>
-          <div className={styles.mobileFooterCol}>
-            <p className={styles.mobileSocialLinkHeader}>INSTAGRAM</p>
-            <a href="https://www.instagram.com/raphmillaa/" className={styles.mobileSocialLink}>@raphmillaa</a>
-          </div>
-          <div className={styles.mobileFooterCol}>
-            <p className={styles.mobileSocialLinkHeader}>YOUTUBE</p>
-            <a href="https://www.youtube.com/@raphMilla" className={styles.mobileSocialLink}>@raphmilla</a>
-          </div>
-        </div>
-        
-        {/* MAIL (centered) */}
-        <div className={styles.mobileFooterRow}>
-          <p className={styles.mobileSocialLinkHeader}>MAIL</p>
+          <p className={styles.mobileSocialLinkHeader}>CONTACT</p>
           <a href="mailto:bookings@raphmilla.com" className={styles.mobileSocialLink}>bookings@raphmilla.com</a>
         </div>
         
-        {/* LOCAL TIME (centered) */}
+        {/* LOCAL TIME */}
         <div className={styles.mobileFooterRow}>
           <p className={styles.mobileSocialLinkHeader}>LOCAL TIME</p>
           <p className={styles.mobileTimeDisplay}><TimeDisplay /></p>
+        </div>
+        
+        {/* Social Icons Row */}
+        <div className={styles.mobileFooterSocialIcons}>
+          <a href="https://www.youtube.com/@raphMilla" className={styles.socialIcon} aria-label="YouTube">
+            <Image 
+              src="/ICONyoutube.svg" 
+              alt="YouTube"
+              width={40}
+              height={40}
+              className={styles.socialIconImg}
+            />
+          </a>
+          <a href="https://www.tiktok.com/@raphmilla" className={styles.socialIcon} aria-label="TikTok">
+            <Image 
+              src="/ICONtiktok.svg" 
+              alt="TikTok"
+              width={40}
+              height={40}
+              className={styles.socialIconImg}
+            />
+          </a>
+          <a href="https://www.instagram.com/raphmillaa/" className={styles.socialIcon} aria-label="Instagram">
+            <Image 
+              src="/ICONinstagram.svg" 
+              alt="Instagram"
+              width={40}
+              height={40}
+              className={styles.socialIconImg}
+            />
+          </a>
+          <a href="https://www.twitch.tv/millagoeslive" className={styles.socialIcon} aria-label="Twitch">
+            <Image 
+              src="/ICONtwitch.svg" 
+              alt="Twitch"
+              width={40}
+              height={40}
+              className={styles.socialIconImg}
+            />
+          </a>
+          <a href="https://soundcloud.com/raphmilla" className={styles.socialIcon} aria-label="SoundCloud">
+            <Image 
+              src="/ICONsoundcloud.svg" 
+              alt="SoundCloud"
+              width={40}
+              height={40}
+              className={styles.socialIconImg}
+            />
+          </a>
         </div>
         
         {/* Logo at bottom */}
@@ -269,6 +331,27 @@ export default function Home() {
       <section className={styles.footer}>
         {isMobile ? <MobileFooter /> : <DesktopFooter />}
       </section>
+
+      {/* Legal Links */}
+      <div className={styles.legalLinks}>
+        <a 
+          href="/impressum" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.legalLink}
+        >
+          Impressum
+        </a>
+        {/* <span className={styles.linkSeparator}>|</span> */}
+        <a 
+          href="/datenschutz" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className={styles.legalLink}
+        >
+          Datenschutz
+        </a>
+      </div>
     </div>
   );
 }
