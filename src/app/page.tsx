@@ -55,7 +55,7 @@ function DesktopHero() {
       <div className={styles.topRow}>
         <Image 
           src="/LOGO.svg" 
-          alt="raph milla logo" 
+          alt="Raph Milla"
           width={155}
           height={24}
           className={styles.logo}
@@ -76,7 +76,7 @@ function DesktopHero() {
       <div className={styles.bottomRow}>
         <Image 
           src="/raph-logo.svg" 
-          alt="raph" 
+          alt="Raph Milla DJ Producer"
           width={600}
           height={150}
           className={styles.raphLogo}
@@ -96,7 +96,7 @@ function MobileHero() {
         <div className={styles.mobileTopRow}>
           <Image 
             src="/raph-logo.svg" 
-            alt="raph" 
+            alt="Raph Milla DJ Producer"
             width={600}
             height={150}
             className={styles.mobileMillaLogo}
@@ -117,7 +117,7 @@ function MobileHero() {
         <div className={styles.mobileBottomRow}>
           <Image 
             src="/milla-logo.svg" 
-            alt="milla" 
+            alt="Raph Milla"
             width={600}
             height={150}
             className={styles.mobileRaphLogo}
@@ -175,7 +175,7 @@ function DesktopFooter() {
       <div className={styles.footerBottomRow}>
         <Image 
           src="/milla-logo.svg" 
-          alt="raph milla logo" 
+          alt="Raph Milla"
           width={155}
           height={24}
           className={styles.millaLogo}
@@ -224,7 +224,7 @@ function MobileFooter() {
         <div className={styles.mobileFooterLogo}>
           <Image 
             src="/LOGO.svg" 
-            alt="raph milla logo" 
+            alt="Raph Milla"
             width={155}
             height={24}
             className={styles.mobileFooterLogoImg}

@@ -406,15 +406,15 @@
 }
 
 .mobileSocialLinkHeader {
-  font-size: 1.3rem;
-  color: rgba(255, 255, 255, 1);
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.4;
   font-weight: 700;
   margin: 0;
 }
 
 .mobileFooterContent .mobileSocialLink {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 1);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -425,7 +425,7 @@
 }
 
 .mobileTimeDisplay {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: rgba(255, 255, 255, 1);
   margin: 0;
 }

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Raph Milla - Producer // DJ | Live Stream Schedule",
-  description: "Raph Milla is a Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive. Book now at bookings@raphmilla.com",
+  description: "Electronic music producer and DJ from Germany. Live streams every Monday 8 PM & Friday 10 PM on Twitch @millagoeslive. Bookings: bookings@raphmilla.com",
   keywords: [
     "Raph Milla",
     "DJ",
