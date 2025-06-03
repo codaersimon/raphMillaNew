@@ -67,7 +67,7 @@ function DesktopHero() {
       
       {/* Middle row */}
       <div className={styles.middleRow}>
-        <a href="https://www.instagram.com/raphmillaa/" className={styles.socialLeft}>@raphmilla</a>
+        <a href="https://www.instagram.com/raphmillamusic/" className={styles.socialLeft}>@raphmillamusic</a>
         <h1 className={styles.pageTitle}>PRODUCER <span className={styles.redSlash}>{'//'}</span> DJ</h1>
         <a href="https://www.twitch.tv/millagoeslive" className={styles.socialRight}>@millagoeslive</a>
       </div>
@@ -127,7 +127,7 @@ function MobileHero() {
                 className={styles.heroSocialIconImg}
               />
             </a>
-            <a href="https://www.instagram.com/raphmillaa/" className={styles.heroSocialIcon} aria-label="Instagram">
+            <a href="https://www.instagram.com/raphmillamusic/" className={styles.heroSocialIcon} aria-label="Instagram">
               <Image 
                 src="/ICONinstagram.svg" 
                 alt="Instagram"
@@ -175,7 +175,7 @@ function DesktopFooter() {
           <div className={styles.footerRow2}>
             <div className={styles.footerInstagram}>
               <p className={styles.socialLinkHeader}>INSTAGRAM</p>
-              <a href="https://www.instagram.com/raphmillaa/" className={styles.socialLink}>@raphmilla</a>
+              <a href="https://www.instagram.com/raphmillamusic/" className={styles.socialLink}>@raphmillamusic</a>
             </div>
             <div className={styles.footerTiktok}>
               <p className={styles.socialLinkHeader}>TIKTOK</p>
