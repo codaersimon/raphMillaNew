@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     siteName: 'Raph Milla',
     images: [
       {
-        url: 'https://raphmilla.com/og-image.png',
+        url: 'https://raphmilla.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Raph Milla - Producer // DJ',
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Raph Milla - Producer // DJ | Live Stream Schedule',
     description: 'Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.',
-    images: ['https://raphmilla.com/og-image.png'],
+    images: ['https://raphmilla.com/og-image.jpg'],
   },
   verification: {
     google: '6pztL3hD2VBYLvkMNe_INmhEhyBINNmmnh97E3F6gOA', // You'll need to add this from Google Search Console
@@ -73,6 +73,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preload critical images for LCP optimization */}
+        <link rel="preload" href="/bg.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/maxi 1.jpg" as="image" type="image/jpeg" />
+        <link rel="preload" href="/maxiMobile.jpg" as="image" type="image/jpeg" />
+        
+        {/* Preload critical fonts */}
+        <link rel="preload" href="/fonts/ClashDisplay-Bold.otf" as="font" type="font/otf" crossOrigin="" />
+        <link rel="preload" href="/fonts/Neuropolitical Rg.otf" as="font" type="font/otf" crossOrigin="" />
+        
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon-16x16.png" sizes="16x16" type="image/png" />
         <link rel="icon" href="/favicon-32x32.png" sizes="32x32" type="image/png" />
@@ -95,7 +104,7 @@ export default function RootLayout({
               "description": "Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM",
               "url": "https://raphmilla.com",
               "sameAs": [
-                "https://www.instagram.com/raphmillaa/",
+                "https://www.instagram.com/raphmillamusic/",
                 "https://www.twitch.tv/millagoeslive",
                 "https://www.youtube.com/@raphMilla"
               ],

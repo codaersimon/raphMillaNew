@@ -258,7 +258,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: url('/maxi 1.png');
+  background: url('/maxi 1.jpg');
   background-size: content;
   background-position: center;
   background-repeat: no-repeat;
@@ -566,7 +566,7 @@
   }
   
   .livestreamBackground {
-    background: url('/maxiMobile.png');
+    background: url('/maxiMobile.jpg');
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -623,7 +623,7 @@
   }
   
   .livestreamBackground {
-    background: url('/maxiMobile.png');
+    background: url('/maxiMobile.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
