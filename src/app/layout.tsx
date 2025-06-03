@@ -73,10 +73,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload critical images for LCP optimization */}
-        <link rel="preload" href="/bg.jpg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/maxi 1.jpg" as="image" type="image/jpeg" />
-        <link rel="preload" href="/maxiMobile.jpg" as="image" type="image/jpeg" />
+        {/* Preload critical images with responsive loading */}
+        <link rel="preload" href="/bg.jpg" as="image" type="image/jpeg" media="(min-width: 769px)" />
+        <link rel="preload" href="/bg-mobile.jpg" as="image" type="image/jpeg" media="(max-width: 768px)" />
+        <link rel="preload" href="/maxi 1.jpg" as="image" type="image/jpeg" media="(min-width: 769px)" />
+        <link rel="preload" href="/maxiMobile.jpg" as="image" type="image/jpeg" media="(max-width: 768px)" />
         
         {/* Preload critical fonts */}
         <link rel="preload" href="/fonts/ClashDisplay-Bold.otf" as="font" type="font/otf" crossOrigin="" />
