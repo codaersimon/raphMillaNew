@@ -253,7 +253,7 @@ function MobileFooter() {
               className={styles.socialIconImg}
             />
           </a>
-          <a href="https://www.instagram.com/raphmillaa/" className={styles.socialIcon} aria-label="Instagram">
+          <a href="https://www.instagram.com/raphmillamusic/" className={styles.socialIcon} aria-label="Instagram">
             <Image 
               src="/ICONinstagram.svg" 
               alt="Instagram"
