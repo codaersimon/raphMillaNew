@@ -1,51 +1,7 @@
-'use client';
-
-import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import styles from './page.module.css';
-
-// Client-only time component to prevent hydration errors
-const TimeDisplay = dynamic(() => Promise.resolve(function TimeDisplay() {
-  const [currentTime, setCurrentTime] = useState('');
-
-  useEffect(() => {
-    const updateTime = () => {
-      const now = new Date();
-      const hamburgTime = new Intl.DateTimeFormat('en-US', {
-        timeZone: 'Europe/Berlin',
-        hour: '2-digit',
-        minute: '2-digit',
-        hour12: true
-      }).format(now);
-      setCurrentTime(`HAMBURG, ${hamburgTime}`);
-    };
-
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    
-    return () => clearInterval(interval);
-  }, []);
-
-  return <>{currentTime}</>;
-}), { ssr: false });
-
-// Custom hook for responsive design
-function useMediaQuery(query: string) {
-  const [matches, setMatches] = useState(false);
-
-  useEffect(() => {
-    const media = window.matchMedia(query);
-    if (media.matches !== matches) {
-      setMatches(media.matches);
-    }
-    const listener = () => setMatches(media.matches);
-    window.addEventListener("resize", listener);
-    return () => window.removeEventListener("resize", listener);
-  }, [matches, query]);
-
-  return matches;
-}
+import TimeDisplay from './TimeDisplay';
 
 // Desktop Hero Component
 function DesktopHero() {
@@ -298,12 +254,12 @@ function MobileFooter() {
 }
 
 export default function Home() {
-  const isMobile = useMediaQuery('(max-width: 768px)');
-
+  // Both variants are rendered; CSS shows the right one, so there is no layout flip after hydration
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
-        {isMobile ? <MobileHero /> : <DesktopHero />}
+        <div className={styles.mobileOnly}><MobileHero /></div>
+        <div className={styles.desktopOnly}><DesktopHero /></div>
       </section>
 
       <section className={styles.livestream}>
@@ -329,28 +285,18 @@ export default function Home() {
       </section>
 
       <section className={styles.footer}>
-        {isMobile ? <MobileFooter /> : <DesktopFooter />}
+        <div className={styles.mobileOnly}><MobileFooter /></div>
+        <div className={styles.desktopOnly}><DesktopFooter /></div>
       </section>
 
       {/* Legal Links */}
       <div className={styles.legalLinks}>
-        <a 
-          href="/impressum" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className={styles.legalLink}
-        >
+        <Link href="/impressum" className={styles.legalLink}>
           Impressum
-        </a>
-        {/* <span className={styles.linkSeparator}>|</span> */}
-        <a 
-          href="/datenschutz" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className={styles.legalLink}
-        >
+        </Link>
+        <Link href="/datenschutz" className={styles.legalLink}>
           Datenschutz
-        </a>
+        </Link>
       </div>
     </div>
   );

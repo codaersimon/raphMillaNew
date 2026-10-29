@@ -1,24 +1,22 @@
 import type { Metadata } from "next";
-import styles from './impressum.module.css';
+import styles from '../legal.module.css';
+import { dmSans } from '../fonts';
 
 export const metadata: Metadata = {
   title: "Impressum - Raph Milla",
   description: "Legal notice and contact information for Raph Milla",
+  alternates: { canonical: '/impressum' },
 };
 
 export default function Impressum() {
   return (
     <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-      
-      <div className={styles.page}>
+      <div className={`${dmSans.variable} ${styles.page}`}>
         <div className={styles.container}>
           <h1 className={styles.title}>Impressum</h1>
           
           <div className={styles.content}>
-            <h2>Angaben gemäß § 5 TMG</h2>
+            <h2>Angaben gemäß § 5 DDG</h2>
             <p>
               Maximilian Raphael Müller<br />
               Rietberg 8<br />
@@ -31,7 +29,7 @@ export default function Impressum() {
               E-Mail: bookings@raphmilla.com
             </p>
 
-            <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+            <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
             <p>
               Maximilian Raphael Müller<br />
               Rietberg 8<br />

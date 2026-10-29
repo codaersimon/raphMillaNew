@@ -1,19 +1,17 @@
 import type { Metadata } from "next";
-import styles from './datenschutz.module.css';
+import styles from '../legal.module.css';
+import { dmSans } from '../fonts';
 
 export const metadata: Metadata = {
   title: "Datenschutz - Raph Milla",
   description: "Privacy policy and data protection information for Raph Milla",
+  alternates: { canonical: '/datenschutz' },
 };
 
 export default function Datenschutz() {
   return (
     <>
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
-      
-      <div className={styles.page}>
+      <div className={`${dmSans.variable} ${styles.page}`}>
         <div className={styles.container}>
           <h1 className={styles.title}>Datenschutzerklärung</h1>
           

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://www.raphmilla.com'),
+  alternates: { canonical: '/' },
   title: "Raph Milla - Producer // DJ | Live Stream Schedule",
   description: "Electronic music producer and DJ from Germany. Live streams every Monday 8 PM & Friday 10 PM on Twitch @millagoeslive. Bookings: bookings@raphmilla.com",
   keywords: [
@@ -35,13 +37,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://raphmilla.com',
+    url: 'https://www.raphmilla.com',
     title: 'Raph Milla - Producer // DJ | Live Stream Schedule',
     description: 'Raph Milla is a Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.',
     siteName: 'Raph Milla',
     images: [
       {
-        url: 'https://raphmilla.com/og-image.jpg',
+        url: 'https://www.raphmilla.com/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'Raph Milla - Producer // DJ',
@@ -52,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Raph Milla - Producer // DJ | Live Stream Schedule',
     description: 'Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.',
-    images: ['https://raphmilla.com/og-image.jpg'],
+    images: ['https://www.raphmilla.com/og-image.jpg'],
   },
   verification: {
     google: '6pztL3hD2VBYLvkMNe_INmhEhyBINNmmnh97E3F6gOA', // You'll need to add this from Google Search Console
@@ -80,8 +82,8 @@ export default function RootLayout({
         <link rel="preload" href="/maxiMobile.jpg" as="image" type="image/jpeg" media="(max-width: 768px)" />
         
         {/* Preload critical fonts */}
-        <link rel="preload" href="/fonts/ClashDisplay-Bold.otf" as="font" type="font/otf" crossOrigin="" />
-        <link rel="preload" href="/fonts/Neuropolitical Rg.otf" as="font" type="font/otf" crossOrigin="" />
+        <link rel="preload" href="/fonts/ClashDisplay-Bold.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/fonts/Neuropolitical-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
         
         {/* Favicons - iOS Safari specific order */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
@@ -98,9 +100,6 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-title" content="Raph Milla" />
         <meta name="theme-color" content="#0a0a0a" />
         <meta name="msapplication-TileColor" content="#0a0a0a" />
-        
-        <link rel="canonical" href="https://raphmilla.com" />
-        
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -111,11 +110,13 @@ export default function RootLayout({
               "name": "Raph Milla",
               "alternateName": ["Milla Goes Live", "DJ Raph Milla"],
               "description": "Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM",
-              "url": "https://raphmilla.com",
+              "url": "https://www.raphmilla.com",
               "sameAs": [
                 "https://www.instagram.com/raphmillamusic/",
                 "https://www.twitch.tv/millagoeslive",
-                "https://www.youtube.com/@raphMilla"
+                "https://www.youtube.com/@raphMilla",
+                "https://www.tiktok.com/@raphmilla",
+                "https://soundcloud.com/raphmilla"
               ],
               "jobTitle": "Producer // DJ",
               "genre": ["Electronic Music", "DJ Set", "Live Stream"],
