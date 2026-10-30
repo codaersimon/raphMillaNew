@@ -15,7 +15,7 @@ export default function Privacy() {
     <>
       <div className={`${dmSans.variable} ${styles.page}`}>
         <div className={styles.container}>
-          <LegalLangSwitch current="en" />
+          <LegalLangSwitch current="en" de="/datenschutz" en="/privacy" />
           <h1 className={styles.title} lang="en">Privacy Policy</h1>
 
           <div className={styles.content} lang="en">

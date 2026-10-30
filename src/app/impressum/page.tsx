@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import styles from '../legal.module.css';
 import { dmSans } from '../fonts';
+import LegalLangSwitch from '../LegalLangSwitch';
 
 export const metadata: Metadata = {
   title: "Impressum - Raph Milla",
   description: "Legal notice and contact information for Raph Milla",
-  alternates: { canonical: '/impressum' },
+  alternates: { canonical: '/impressum', languages: { de: '/impressum', en: '/legal-notice' } },
 };
 
 export default function Impressum() {
@@ -13,6 +14,7 @@ export default function Impressum() {
     <>
       <div className={`${dmSans.variable} ${styles.page}`}>
         <div className={styles.container}>
+          <LegalLangSwitch current="de" de="/impressum" en="/legal-notice" />
           <h1 className={styles.title}>Impressum</h1>
           
           <div className={styles.content}>

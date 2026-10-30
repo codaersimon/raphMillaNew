@@ -24,9 +24,9 @@ export function SiteFooter() {
   return (
     <footer className={styles.footer}>
       <span>© {new Date().getFullYear()} Raph Milla</span>
-      <Link href="/impressum">Impressum</Link>
-      <Link href="/datenschutz">Datenschutz</Link>
-      <Link href="/privacy">Privacy</Link>
+      {/* Bilingual labels; each page has a Deutsch | English switch */}
+      <Link href="/impressum">Impressum / Legal notice</Link>
+      <Link href="/datenschutz">Datenschutz / Privacy</Link>
     </footer>
   );
 }
