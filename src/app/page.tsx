@@ -71,7 +71,16 @@ export default function Home() {
             {releases.map((r) => (
               <li key={r.title}>
                 <a href={r.url} className={styles.releaseCard} target="_blank" rel="noopener noreferrer">
-                  <Image src={r.cover} alt={`${r.title} cover`} width={400} height={400} className={styles.releaseCover} sizes="(max-width: 720px) 50vw, 220px" />
+                  <span className={styles.releaseCoverWrap}>
+                    <Image src={r.cover} alt={`${r.title} cover`} width={400} height={400} className={styles.releaseCover} sizes="(max-width: 720px) 50vw, 220px" />
+                    {r.glow && (
+                      <span
+                        className={styles.coverGlow}
+                        style={{ left: `${r.glow.x}%`, top: `${r.glow.y}%`, width: `${r.glow.size}%` }}
+                        aria-hidden="true"
+                      />
+                    )}
+                  </span>
                   {r.type === 'Original' && <span className={styles.releaseType}>{r.type}</span>}
                   <span className={styles.releaseTitle}>{r.title}</span>
                   <span className={styles.releaseArtist}>{r.artist === 'Raph Milla' ? 'Raph Milla' : `${r.artist} · Raph Milla`}</span>

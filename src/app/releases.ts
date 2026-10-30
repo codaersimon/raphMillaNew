@@ -8,6 +8,8 @@ export type Release = {
   type: 'Original' | 'Remix' | 'Edit';
   cover: string;
   url: string;
+  // Easter egg: breathing glow over a spot on the cover, in % of the cover size
+  glow?: { x: number; y: number; size: number };
 };
 
 // HyperFollow lists every store until the direct store links are known.
@@ -69,6 +71,7 @@ export const releases: Release[] = [
     type: 'Original',
     cover: '/releases/that-one-girl.jpg',
     url: 'https://open.spotify.com/track/1OzVFy930Wmc0P0cANxy5X',
+    glow: { x: 45.2, y: 49.9, size: 7.1 },
   },
   {
     title: 'Love Come Down',
