@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import { dmSans } from './fonts';
-import YouTubeEmbed from './YouTubeEmbed';
 import ReleaseHero from './ReleaseHero';
 import GetNotified from './GetNotified';
+import SetPlayer from './SetPlayer';
 import { SiteFooter, SiteHeader } from './Site';
-import { featured, featuredSet, moreSets, playlist, releases } from './releases';
+import { featured, playlist, releases, sets } from './releases';
 
 export default function Home() {
   return (
@@ -22,26 +22,8 @@ export default function Home() {
         <section className={styles.section} aria-labelledby="set-title">
           <div className={styles.sectionHead}>
             <h2 id="set-title" className={styles.sectionTitle}>The set</h2>
-            <span className={styles.sectionMeta}>{featuredSet.duration}</span>
           </div>
-          <YouTubeEmbed id={featuredSet.youtubeId} title={featuredSet.title} thumbnail={featuredSet.thumbnail} />
-          <p className={styles.caption}>{featuredSet.title}</p>
-          <div className={styles.setRows}>
-            {moreSets.map((s) => (
-              <a key={s.url} href={s.url} className={styles.streamRow} target="_blank" rel="noopener noreferrer">
-                <span className={styles.rowIndex}>{s.duration}</span>
-                <span className={styles.rowLabel}>{s.title}</span>
-                <span className={styles.rowArrow} aria-hidden="true">↗</span>
-              </a>
-            ))}
-            <a href={featuredSet.mixcloud} className={styles.streamRow} target="_blank" rel="noopener noreferrer">
-              <span className={styles.rowIndex}>
-                <Image src="/icons/mixcloud.svg" alt="" width={26} height={26} className={styles.rowIcon} />
-              </span>
-              <span className={styles.rowLabel}>Listen on Mixcloud</span>
-              <span className={styles.rowArrow} aria-hidden="true">↗</span>
-            </a>
-          </div>
+          <SetPlayer sets={sets} />
         </section>
 
         {/* Playlist */}

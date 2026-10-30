@@ -48,19 +48,28 @@ export const thatOneGirl: FeaturedRelease = {
 // The release shown at the top of the homepage
 export const featured = thatOneGirl;
 
-export const featuredSet = {
-  title: 'Funky Feel-Good House Session',
-  duration: '1:16:04',
-  youtubeId: 'aH1ejbDJwD0',
-  thumbnail: '/releases/set-funky-feel-good.jpg',
-  mixcloud: 'https://www.mixcloud.com/RaphMilla/funky-feel-good-house-session/',
+export type DjSet = {
+  title: string;
+  minutes: number;
+  youtubeId: string;
+  thumbnail: string;
+  mixcloud?: string;
 };
 
-export const moreSets = [
+// DJ sets for "The set", newest first — the first one is shown by default
+export const sets: DjSet[] = [
+  {
+    title: 'Funky Feel-Good House Session',
+    minutes: 76,
+    youtubeId: 'aH1ejbDJwD0',
+    thumbnail: '/releases/set-funky-feel-good.jpg',
+    mixcloud: 'https://www.mixcloud.com/RaphMilla/funky-feel-good-house-session/',
+  },
   {
     title: 'Sunny Balcony Mix',
-    duration: '51:48',
-    url: 'https://www.youtube.com/watch?v=XeSOzbluX24',
+    minutes: 52,
+    youtubeId: 'XeSOzbluX24',
+    thumbnail: '/releases/set-sunny-balcony.jpg',
   },
 ];
 
