@@ -1,7 +1,7 @@
 {
-  "name": "Raph Milla - Producer // DJ",
+  "name": "Raph Milla – DJ & Producer",
   "short_name": "Raph Milla",
-  "description": "Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.",
+  "description": "House music nobody asked for (yet). DJ & producer from Hannover.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -14,8 +14,8 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#0a0a0a",
-  "background_color": "#0a0a0a",
+  "theme_color": "#0B0B08",
+  "background_color": "#0B0B08",
   "display": "browser",
   "start_url": "/",
   "scope": "/",

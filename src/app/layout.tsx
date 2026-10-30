@@ -4,21 +4,21 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.raphmilla.com'),
   alternates: { canonical: '/' },
-  title: "Raph Milla - Producer // DJ | Live Stream Schedule",
-  description: "Electronic music producer and DJ from Germany. Live streams every Monday 8 PM & Friday 10 PM on Twitch @millagoeslive. Bookings: bookings@raphmilla.com",
+  title: "Raph Milla – DJ & Producer | That One Girl out now",
+  description: "House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com",
   keywords: [
     "Raph Milla",
     "DJ",
     "Producer",
     "Electronic Music",
-    "Live Stream",
-    "Twitch",
+    "House Music",
+    "Tech House",
     "Music Producer",
     "DJ Raph Milla",
-    "Milla Goes Live",
-    "Hamburg DJ",
-    "Electronic Dance Music",
-    "Live DJ Set"
+    "That One Girl",
+    "Hannover DJ",
+    "Feel-Good House",
+    "DJ Set"
   ],
   authors: [{ name: "Raph Milla" }],
   creator: "Raph Milla",
@@ -38,22 +38,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.raphmilla.com',
-    title: 'Raph Milla - Producer // DJ | Live Stream Schedule',
-    description: 'Raph Milla is a Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.',
+    title: 'Raph Milla – DJ & Producer | That One Girl out now',
+    description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com',
     siteName: 'Raph Milla',
     images: [
       {
         url: 'https://www.raphmilla.com/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Raph Milla - Producer // DJ',
+        alt: 'Raph Milla – DJ & Producer',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Raph Milla - Producer // DJ | Live Stream Schedule',
-    description: 'Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM. Watch live on Twitch @millagoeslive.',
+    title: 'Raph Milla – DJ & Producer | That One Girl out now',
+    description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com',
     images: ['https://www.raphmilla.com/og-image.jpg'],
   },
   verification: {
@@ -75,15 +75,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preload critical images with responsive loading */}
-        <link rel="preload" href="/bg.jpg" as="image" type="image/jpeg" media="(min-width: 769px)" />
-        <link rel="preload" href="/bg-mobile.jpg" as="image" type="image/jpeg" media="(max-width: 768px)" />
-        <link rel="preload" href="/maxi 1.jpg" as="image" type="image/jpeg" media="(min-width: 769px)" />
-        <link rel="preload" href="/maxiMobile.jpg" as="image" type="image/jpeg" media="(max-width: 768px)" />
         
         {/* Preload critical fonts */}
         <link rel="preload" href="/fonts/ClashDisplay-Bold.woff2" as="font" type="font/woff2" crossOrigin="" />
-        <link rel="preload" href="/fonts/Neuropolitical-Regular.woff2" as="font" type="font/woff2" crossOrigin="" />
         
         {/* Favicons - iOS Safari specific order */}
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="180x180" />
@@ -98,8 +92,8 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black" />
         <meta name="apple-mobile-web-app-title" content="Raph Milla" />
-        <meta name="theme-color" content="#0a0a0a" />
-        <meta name="msapplication-TileColor" content="#0a0a0a" />
+        <meta name="theme-color" content="#0B0B08" />
+        <meta name="msapplication-TileColor" content="#0B0B08" />
         {/* JSON-LD Structured Data */}
         <script
           type="application/ld+json"
@@ -108,25 +102,24 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Person",
               "name": "Raph Milla",
-              "alternateName": ["Milla Goes Live", "DJ Raph Milla"],
-              "description": "Producer and DJ featuring live streams every Monday 8 PM and Friday 10 PM",
+              "alternateName": ["DJ Raph Milla"],
+              "description": "DJ and producer of groovy, feel-good house music from Hannover",
               "url": "https://www.raphmilla.com",
               "sameAs": [
                 "https://www.instagram.com/raphmillamusic/",
-                "https://www.twitch.tv/millagoeslive",
                 "https://www.youtube.com/@raphMilla",
                 "https://www.tiktok.com/@raphmilla",
                 "https://soundcloud.com/raphmilla"
               ],
-              "jobTitle": "Producer // DJ",
-              "genre": ["Electronic Music", "DJ Set", "Live Stream"],
+              "jobTitle": "DJ & Producer",
+              "genre": ["House", "Tech House", "Electronic Music"],
               "address": {
                 "@type": "PostalAddress",
-                "addressLocality": "Hamburg",
+                "addressLocality": "Hannover",
                 "addressCountry": "DE"
               },
               "email": "bookings@raphmilla.com",
-              "knowsAbout": ["Music Production", "DJ Performance", "Live Streaming", "Electronic Music"],
+              "knowsAbout": ["Music Production", "DJ Performance", "House Music"],
               "performer": {
                 "@type": "MusicGroup",
                 "name": "Raph Milla"

@@ -65,3 +65,25 @@
     font-size: 0.9rem;
   }
 } 
+.langSwitch {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.langSwitch a[aria-current='page'] {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.langSwitch a:hover {
+  color: var(--foreground);
+}
+
+.content a {
+  color: var(--gold);
+  text-decoration: underline;
+}

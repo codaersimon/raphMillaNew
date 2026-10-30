@@ -10,8 +10,20 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.raphmilla.com/that-one-girl</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.raphmilla.com/impressum</loc>
     <lastmod>2026-10-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://www.raphmilla.com/privacy</loc>
+    <lastmod>2026-10-30</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>

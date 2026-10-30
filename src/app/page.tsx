@@ -1,303 +1,95 @@
 import Image from 'next/image';
-import Link from 'next/link';
 import styles from './page.module.css';
-import TimeDisplay from './TimeDisplay';
-
-// Desktop Hero Component
-function DesktopHero() {
-  return (
-    <div className={styles.heroContainer}>
-      {/* Top row */}
-      <div className={styles.topRow}>
-        <Image 
-          src="/LOGO.svg" 
-          alt="Raph Milla"
-          width={155}
-          height={24}
-          className={styles.logo}
-          priority
-        />
-        <p><a href="mailto:bookings@raphmilla.com" className={styles.bookings}>BOOKINGS</a></p>
-        <div className={styles.location}><TimeDisplay /></div>
-      </div>
-      
-      {/* Middle row */}
-      <div className={styles.middleRow}>
-        <a href="https://www.instagram.com/raphmillamusic/" className={styles.socialLeft}>@raphmillamusic</a>
-        <h1 className={styles.pageTitle}>PRODUCER <span className={styles.redSlash}>{'//'}</span> DJ</h1>
-        <a href="https://www.twitch.tv/millagoeslive" className={styles.socialRight}>@millagoeslive</a>
-      </div>
-      
-      {/* Bottom row */}
-      <div className={styles.bottomRow}>
-        <Image 
-          src="/raph-logo.svg" 
-          alt="Raph Milla DJ Producer"
-          width={600}
-          height={150}
-          className={styles.raphLogo}
-          priority
-        />
-      </div>
-    </div>
-  );
-}
-
-// Mobile Hero Component (placeholder for now)
-function MobileHero() {
-  return (
-    <div className={styles.mobileHeroContainer}>
-      <div className={styles.mobileHeroContent}>
-        {/* Top row: Milla logo */}
-        <div className={styles.mobileTopRow}>
-          <Image 
-            src="/raph-logo.svg" 
-            alt="Raph Milla DJ Producer"
-            width={600}
-            height={150}
-            className={styles.mobileMillaLogo}
-            priority
-          />
-        </div>
-        
-        {/* Middle row: Page title, tagline and social links */}
-        <div className={styles.mobileMiddleRow}>
-          <h1 className={styles.mobilePageTitle}>PRODUCER <span className={styles.redSlash}>{'//'}</span> DJ</h1>
-          <p className={styles.mobileTagline}>LISTEN <span className={styles.redSlash}>{'//'}</span> WATCH <span className={styles.redSlash}>{'//'}</span> CONNECT</p>
-          <div className={styles.mobileHeroSocialIcons}>
-            <a href="https://www.youtube.com/@raphMilla" className={styles.heroSocialIcon} aria-label="YouTube">
-              <Image 
-                src="/ICONyoutube.svg" 
-                alt="YouTube"
-                width={36}
-                height={36}
-                className={styles.heroSocialIconImg}
-              />
-            </a>
-            <a href="https://www.tiktok.com/@raphmilla" className={styles.heroSocialIcon} aria-label="TikTok">
-              <Image 
-                src="/ICONtiktok.svg" 
-                alt="TikTok"
-                width={36}
-                height={36}
-                className={styles.heroSocialIconImg}
-              />
-            </a>
-            <a href="https://www.instagram.com/raphmillamusic/" className={styles.heroSocialIcon} aria-label="Instagram">
-              <Image 
-                src="/ICONinstagram.svg" 
-                alt="Instagram"
-                width={36}
-                height={36}
-                className={styles.heroSocialIconImg}
-              />
-            </a>
-          </div>
-        </div>
-        
-        {/* Bottom row: Raph logo */}
-        <div className={styles.mobileBottomRow}>
-          <Image 
-            src="/milla-logo.svg" 
-            alt="Raph Milla"
-            width={600}
-            height={150}
-            className={styles.mobileRaphLogo}
-            priority
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// Desktop Footer Component
-function DesktopFooter() {
-  return (
-    <div className={styles.footerContainer}>
-      {/* Split container: empty left, all content right */}
-      <div className={styles.footerSplit}>
-        <div className={styles.footerEmptyLeft}></div>
-        <div className={styles.footerContentRight}>
-          {/* Row 1: Twitch alone */}
-          <div className={styles.footerRow1}>
-            <div className={styles.footerTwitch}>
-              <p className={styles.socialLinkHeader}>TWITCH</p>
-              <a href="https://www.twitch.tv/millagoeslive" className={styles.socialLink}>@millagoeslive</a>
-            </div>
-          </div>
-          
-          {/* Row 2: Instagram left, TikTok center, YouTube right */}
-          <div className={styles.footerRow2}>
-            <div className={styles.footerInstagram}>
-              <p className={styles.socialLinkHeader}>INSTAGRAM</p>
-              <a href="https://www.instagram.com/raphmillamusic/" className={styles.socialLink}>@raphmillamusic</a>
-            </div>
-            <div className={styles.footerTiktok}>
-              <p className={styles.socialLinkHeader}>TIKTOK</p>
-              <a href="https://www.tiktok.com/@raphmilla" className={styles.socialLink}>@raphmilla</a>
-            </div>
-            <div className={styles.footerYoutube}>
-              <p className={styles.socialLinkHeader}>YOUTUBE</p>
-              <a href="https://www.youtube.com/@raphMilla" className={styles.socialLink}>@raphmilla</a>
-            </div>
-          </div>
-          
-          {/* Row 3: Mail left, empty center, Local Time right */}
-          <div className={styles.footerRow3}>
-            <div className={styles.footerMail}>
-              <p className={styles.socialLinkHeader}>CONTACT</p>
-              <p><a href="mailto:bookings@raphmilla.com" className={styles.socialLink}>bookings@raphmilla.com</a></p>
-            </div>
-            <div></div>
-            <div className={styles.footerLocalTime}>
-              <p className={styles.socialLinkHeader}>LOCAL TIME</p>
-              <p className={styles.timedisplay}><TimeDisplay /></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      {/* Bottom row */}
-      <div className={styles.footerBottomRow}>
-        <Image 
-          src="/milla-logo.svg" 
-          alt="Raph Milla"
-          width={155}
-          height={24}
-          className={styles.millaLogo}
-        />
-      </div>
-    </div>
-  );
-}
-
-// Mobile Footer Component
-function MobileFooter() {
-  return (
-    <div className={styles.mobileFooterContainer}>
-      <div className={styles.mobileFooterContent}>
-        {/* CONTACT (formerly MAIL) */}
-        <div className={styles.mobileFooterRow}>
-          <p className={styles.mobileSocialLinkHeader}>CONTACT</p>
-          <a href="mailto:bookings@raphmilla.com" className={styles.mobileSocialLink}>bookings@raphmilla.com</a>
-        </div>
-        
-        {/* LOCAL TIME */}
-        <div className={styles.mobileFooterRow}>
-          <p className={styles.mobileSocialLinkHeader}>LOCAL TIME</p>
-          <p className={styles.mobileTimeDisplay}><TimeDisplay /></p>
-        </div>
-        
-        {/* Social Icons Row */}
-        <div className={styles.mobileFooterSocialIcons}>
-          <a href="https://www.youtube.com/@raphMilla" className={styles.socialIcon} aria-label="YouTube">
-            <Image 
-              src="/ICONyoutube.svg" 
-              alt="YouTube"
-              width={40}
-              height={40}
-              className={styles.socialIconImg}
-            />
-          </a>
-          <a href="https://www.tiktok.com/@raphmilla" className={styles.socialIcon} aria-label="TikTok">
-            <Image 
-              src="/ICONtiktok.svg" 
-              alt="TikTok"
-              width={40}
-              height={40}
-              className={styles.socialIconImg}
-            />
-          </a>
-          <a href="https://www.instagram.com/raphmillamusic/" className={styles.socialIcon} aria-label="Instagram">
-            <Image 
-              src="/ICONinstagram.svg" 
-              alt="Instagram"
-              width={40}
-              height={40}
-              className={styles.socialIconImg}
-            />
-          </a>
-          <a href="https://www.twitch.tv/millagoeslive" className={styles.socialIcon} aria-label="Twitch">
-            <Image 
-              src="/ICONtwitch.svg" 
-              alt="Twitch"
-              width={40}
-              height={40}
-              className={styles.socialIconImg}
-            />
-          </a>
-          <a href="https://soundcloud.com/raphmilla" className={styles.socialIcon} aria-label="SoundCloud">
-            <Image 
-              src="/ICONsoundcloud.svg" 
-              alt="SoundCloud"
-              width={40}
-              height={40}
-              className={styles.socialIconImg}
-            />
-          </a>
-        </div>
-        
-        {/* Logo at bottom */}
-        <div className={styles.mobileFooterLogo}>
-          <Image 
-            src="/LOGO.svg" 
-            alt="Raph Milla"
-            width={155}
-            height={24}
-            className={styles.mobileFooterLogoImg}
-          />
-        </div>
-      </div>
-    </div>
-  );
-}
+import { dmSans } from './fonts';
+import YouTubeEmbed from './YouTubeEmbed';
+import ReleaseHero from './ReleaseHero';
+import GetNotified from './GetNotified';
+import { SiteFooter, SiteHeader } from './Site';
+import { featured, featuredSet, moreSets, playlist, releases } from './releases';
 
 export default function Home() {
-  // Both variants are rendered; CSS shows the right one, so there is no layout flip after hydration
   return (
-    <div className={styles.page}>
-      <section className={styles.hero}>
-        <div className={styles.mobileOnly}><MobileHero /></div>
-        <div className={styles.desktopOnly}><DesktopHero /></div>
-      </section>
+    <div className={`${dmSans.variable} ${styles.page}`}>
+      <main className={styles.main}>
+        <SiteHeader />
 
-      <section className={styles.livestream}>
-        <div className={styles.livestreamContainer}>
-          {/* Background image overlay */}
-          <div className={styles.livestreamBackground}></div>
-          
-          {/* Content overlay */}
-          <div className={styles.livestreamContent}>
-            <div className={styles.schedule}>
-              <p className={styles.scheduleItem}>LIVE IM STREAM <br />MONTAG // 20 UHR <br />FREITAG // 22 UHR</p>
-            </div>
-            <a 
-              href="https://www.twitch.tv/millagoeslive" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className={styles.watchLiveButton}
-            >
-              WATCH LIVE
+        {/* Featured release: the reason most visitors are here */}
+        <ReleaseHero release={featured} />
+
+        <GetNotified />
+
+        {/* Set */}
+        <section className={styles.section} aria-labelledby="set-title">
+          <div className={styles.sectionHead}>
+            <h2 id="set-title" className={styles.sectionTitle}>The set</h2>
+            <span className={styles.sectionMeta}>{featuredSet.duration}</span>
+          </div>
+          <YouTubeEmbed id={featuredSet.youtubeId} title={featuredSet.title} thumbnail={featuredSet.thumbnail} />
+          <p className={styles.caption}>{featuredSet.title}</p>
+          <div className={styles.setRows}>
+            {moreSets.map((s) => (
+              <a key={s.url} href={s.url} className={styles.streamRow} target="_blank" rel="noopener noreferrer">
+                <span className={styles.rowIndex}>{s.duration}</span>
+                <span className={styles.rowLabel}>{s.title}</span>
+                <span className={styles.rowArrow} aria-hidden="true">↗</span>
+              </a>
+            ))}
+            <a href={featuredSet.mixcloud} className={styles.streamRow} target="_blank" rel="noopener noreferrer">
+              <span className={styles.rowIndex}>
+                <Image src="/icons/mixcloud.svg" alt="" width={26} height={26} className={styles.rowIcon} />
+              </span>
+              <span className={styles.rowLabel}>Listen on Mixcloud</span>
+              <span className={styles.rowArrow} aria-hidden="true">↗</span>
             </a>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className={styles.footer}>
-        <div className={styles.mobileOnly}><MobileFooter /></div>
-        <div className={styles.desktopOnly}><DesktopFooter /></div>
-      </section>
+        {/* Playlist */}
+        <section className={styles.section} aria-labelledby="playlist-title">
+          <div className={styles.sectionHead}>
+            <h2 id="playlist-title" className={styles.sectionTitle}>The playlist</h2>
+          </div>
+          <a href={playlist.url} className={styles.playlistCard} target="_blank" rel="noopener noreferrer">
+            <Image src={playlist.cover} alt="" width={300} height={300} className={styles.playlistCover} />
+            <span className={styles.playlistText}>
+              <span className={styles.releaseTitle}>{playlist.title}</span>
+              <span className={styles.releaseArtist}>{playlist.description}</span>
+              <span className={styles.playlistCta}>
+                <Image src="/icons/spotify.svg" alt="" width={14} height={14} /> Listen on Spotify ↗
+              </span>
+            </span>
+          </a>
+        </section>
 
-      {/* Legal Links */}
-      <div className={styles.legalLinks}>
-        <Link href="/impressum" className={styles.legalLink}>
-          Impressum
-        </Link>
-        <Link href="/datenschutz" className={styles.legalLink}>
-          Datenschutz
-        </Link>
-      </div>
+        {/* Releases */}
+        <section className={styles.section} aria-labelledby="releases-title">
+          <div className={styles.sectionHead}>
+            <h2 id="releases-title" className={styles.sectionTitle}>Releases</h2>
+            <span className={styles.sectionMeta}>{releases.length}</span>
+          </div>
+          <ul className={styles.releaseGrid}>
+            {releases.map((r) => (
+              <li key={r.title}>
+                <a href={r.url} className={styles.releaseCard} target="_blank" rel="noopener noreferrer">
+                  <Image src={r.cover} alt={`${r.title} cover`} width={400} height={400} className={styles.releaseCover} sizes="(max-width: 720px) 50vw, 220px" />
+                  {r.type === 'Original' && <span className={styles.releaseType}>{r.type}</span>}
+                  <span className={styles.releaseTitle}>{r.title}</span>
+                  <span className={styles.releaseArtist}>{r.artist === 'Raph Milla' ? 'Raph Milla' : `${r.artist} · Raph Milla`}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        {/* Bookings */}
+        <section className={styles.bookings} aria-labelledby="bookings-title">
+          <h2 id="bookings-title" className={styles.label}>Bookings</h2>
+          <a href="mailto:bookings@raphmilla.com" className={styles.bookingsMail}>bookings@raphmilla.com</a>
+          <p className={styles.sectionMeta}>Hannover, Germany</p>
+        </section>
+      </main>
+
+      <SiteFooter />
     </div>
   );
 }
