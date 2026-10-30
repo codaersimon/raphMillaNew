@@ -70,7 +70,11 @@ export default function Home() {
           <ul className={styles.releaseGrid}>
             {releases.map((r) => (
               <li key={r.title}>
-                <a href={r.url} className={styles.releaseCard} target="_blank" rel="noopener noreferrer">
+                <a
+                  href={r.url}
+                  className={styles.releaseCard}
+                  {...(r.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
+                >
                   <span className={styles.releaseCoverWrap}>
                     <Image src={r.cover} alt={`${r.title} cover`} width={400} height={400} className={styles.releaseCover} sizes="(max-width: 720px) 50vw, 220px" />
                     {r.glow && (

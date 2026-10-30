@@ -41,20 +41,12 @@ export const metadata: Metadata = {
     title: 'Raph Milla – DJ & Producer | That One Girl out now',
     description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com',
     siteName: 'Raph Milla',
-    images: [
-      {
-        url: 'https://www.raphmilla.com/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Raph Milla – DJ & Producer',
-      },
-    ],
+    // Preview image comes from app/opengraph-image.tsx
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Raph Milla – DJ & Producer | That One Girl out now',
     description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com',
-    images: ['https://www.raphmilla.com/og-image.jpg'],
   },
   verification: {
     google: '6pztL3hD2VBYLvkMNe_INmhEhyBINNmmnh97E3F6gOA', // You'll need to add this from Google Search Console

@@ -70,7 +70,7 @@ export const releases: Release[] = [
     artist: 'Raph Milla',
     type: 'Original',
     cover: '/releases/that-one-girl.jpg',
-    url: 'https://open.spotify.com/track/1OzVFy930Wmc0P0cANxy5X',
+    url: '/that-one-girl',
     glow: { x: 45.2, y: 49.9, size: 7.1 },
   },
   {
