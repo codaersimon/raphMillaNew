@@ -7,7 +7,7 @@ import { SiteFooter, SiteHeader } from '../Site';
 import { mamaAy } from '../releases';
 
 // Standalone release page, linked from the homepage cover and the releases grid.
-const description = 'Mama Ay by Dixxa & Raph Milla: an Afro house collaboration with Sri Lankan DJ and producer Dixxa. Out now on Spotify, Apple Music and YouTube Music.';
+const description = 'Mama Ay by Dixxa & Raph Milla: an Afro house collaboration with Sri Lankan DJ and producer Dixxa. Out now on Spotify, Apple Music, YouTube Music and Amazon Music.';
 
 export const metadata: Metadata = {
   title: 'Mama Ay – Dixxa & Raph Milla',

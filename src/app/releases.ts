@@ -67,6 +67,7 @@ export const mamaAy: FeaturedRelease = {
     { label: 'Spotify', url: 'https://open.spotify.com/track/1Yn5EXe9pWBy5e8OiPwwbY' },
     { label: 'Apple Music', url: 'https://music.apple.com/album/6827373198?i=6827373199' },
     { label: 'YouTube Music', url: 'https://music.youtube.com/watch?v=BMgfUui0EoM' },
+    { label: 'Amazon Music', url: 'https://music.amazon.de/albums/B0HPF4QPPT?trackAsin=B0HPFB7J4Q' },
   ],
 };
 
