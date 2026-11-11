@@ -229,6 +229,12 @@
   margin: 1.75rem 0 1.75rem;
 }
 
+/* Pulls the credit line up under the title, keeping the gap to the stream list */
+.heroArtists {
+  margin: -1.25rem 0 1.75rem;
+  color: var(--muted);
+}
+
 /* Numbered rows, inspired by editorial link lists */
 .streamList {
   list-style: none;

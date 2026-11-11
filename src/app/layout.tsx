@@ -4,8 +4,8 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.raphmilla.com'),
   alternates: { canonical: '/' },
-  title: "Raph Milla – DJ & Producer | That One Girl out now",
-  description: "House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com",
+  title: "Raph Milla – DJ & Producer | Mama Ay out now",
+  description: "House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single Mama Ay with Dixxa, watch the sets, bookings: bookings@raphmilla.com",
   keywords: [
     "Raph Milla",
     "DJ",
@@ -15,6 +15,8 @@ export const metadata: Metadata = {
     "Tech House",
     "Music Producer",
     "DJ Raph Milla",
+    "Mama Ay",
+    "Dixxa",
     "That One Girl",
     "Hannover DJ",
     "Feel-Good House",
@@ -38,15 +40,15 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: 'https://www.raphmilla.com',
-    title: 'Raph Milla – DJ & Producer | That One Girl out now',
-    description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com',
+    title: 'Raph Milla – DJ & Producer | Mama Ay out now',
+    description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single Mama Ay with Dixxa, watch the sets, bookings: bookings@raphmilla.com',
     siteName: 'Raph Milla',
     // Preview image comes from app/opengraph-image.tsx
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Raph Milla – DJ & Producer | That One Girl out now',
-    description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single That One Girl, watch the sets, bookings: bookings@raphmilla.com',
+    title: 'Raph Milla – DJ & Producer | Mama Ay out now',
+    description: 'House music nobody asked for (yet). Groovy, feel-good house from Hannover. Listen to the new single Mama Ay with Dixxa, watch the sets, bookings: bookings@raphmilla.com',
   },
   verification: {
     google: '6pztL3hD2VBYLvkMNe_INmhEhyBINNmmnh97E3F6gOA', // You'll need to add this from Google Search Console

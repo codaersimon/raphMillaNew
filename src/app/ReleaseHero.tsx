@@ -3,15 +3,19 @@ import CoverPlayer from './CoverPlayer';
 import type { FeaturedRelease } from './releases';
 
 // Cover, title, streaming rows and Bandcamp button — used on the homepage and on release pages.
-export default function ReleaseHero({ release }: { release: FeaturedRelease }) {
+// Only the first release on a page is the h1; further ones are h2.
+export default function ReleaseHero({ release, primary = true }: { release: FeaturedRelease; primary?: boolean }) {
+  const Heading = primary ? 'h1' : 'h2';
+  const titleId = `${release.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-title`;
   return (
-    <section className={styles.hero} aria-labelledby="featured-title">
+    <section className={styles.hero} aria-labelledby={titleId}>
       <p className={styles.label}>
         <span className={styles.glowDot} aria-hidden="true" />
         {release.label}
       </p>
       <CoverPlayer cover={release.cover} title={release.title} preview={release.preview} />
-      <h1 id="featured-title" className={styles.heroTitle}>{release.title}</h1>
+      <Heading id={titleId} className={styles.heroTitle}>{release.title}</Heading>
+      {release.artists && <p className={styles.heroArtists}>{release.artists}</p>}
 
       <ul className={styles.streamList}>
         {release.stream.map((s, i) => (

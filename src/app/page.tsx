@@ -13,8 +13,10 @@ export default function Home() {
       <main className={styles.main}>
         <SiteHeader />
 
-        {/* Featured release: the reason most visitors are here */}
-        <ReleaseHero release={featured} />
+        {/* Featured releases: the reason most visitors are here */}
+        {featured.map((r, i) => (
+          <ReleaseHero key={r.title} release={r} primary={i === 0} />
+        ))}
 
         <GetNotified />
 

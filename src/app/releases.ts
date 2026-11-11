@@ -17,6 +17,8 @@ const THAT_ONE_GIRL_HYPERFOLLOW = 'https://distrokid.com/hyperfollow/raphmilla/t
 
 export type FeaturedRelease = {
   title: string;
+  // Credit line under the title, for collaborations
+  artists?: string;
   label: string;
   cover: string;
   stream: StreamLink[];
@@ -45,8 +47,20 @@ export const thatOneGirl: FeaturedRelease = {
   preview: '/audio/that-one-girl-preview.m4a',
 };
 
-// The release shown at the top of the homepage
-export const featured = thatOneGirl;
+// Also served on its own at /mama-ay
+export const mamaAy: FeaturedRelease = {
+  title: 'Mama Ay',
+  artists: 'Dixxa & Raph Milla',
+  label: 'Out now',
+  cover: '/releases/mama-ay.jpg',
+  stream: [
+    { label: 'Spotify', url: 'https://open.spotify.com/track/1Yn5EXe9pWBy5e8OiPwwbY' },
+    { label: 'Apple Music', url: 'https://music.apple.com/album/6827373198?i=6827373199' },
+  ],
+};
+
+// Releases shown at the top of the homepage, newest first
+export const featured = [mamaAy, thatOneGirl];
 
 export type DjSet = {
   title: string;
@@ -74,6 +88,13 @@ export const sets: DjSet[] = [
 ];
 
 export const releases: Release[] = [
+  {
+    title: 'Mama Ay',
+    artist: 'Dixxa',
+    type: 'Original',
+    cover: '/releases/mama-ay.jpg',
+    url: '/mama-ay',
+  },
   {
     title: 'That One Girl',
     artist: 'Raph Milla',
