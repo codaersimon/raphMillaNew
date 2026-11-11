@@ -45,6 +45,7 @@
 }
 
 .logo {
+  display: block;
   width: 168px;
   height: auto;
 }

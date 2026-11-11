@@ -7,7 +7,10 @@ import { socials } from './releases';
 export function SiteHeader() {
   return (
     <header className={styles.header}>
-      <Image src="/logo-gold.svg" alt="Raph Milla" width={168} height={26} className={styles.logo} priority />
+      {/* Logo leads back to the homepage from release pages */}
+      <Link href="/" aria-label="Raph Milla – home">
+        <Image src="/logo-gold.svg" alt="Raph Milla" width={168} height={26} className={styles.logo} priority />
+      </Link>
       <p className={styles.kicker}>DJ &amp; Producer · Hannover</p>
       <nav className={styles.socials} aria-label="Social media">
         {socials.filter((s) => s.url).map((s) => (
