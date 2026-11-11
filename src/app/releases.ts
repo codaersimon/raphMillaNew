@@ -66,6 +66,7 @@ export const mamaAy: FeaturedRelease = {
   stream: [
     { label: 'Spotify', url: 'https://open.spotify.com/track/1Yn5EXe9pWBy5e8OiPwwbY' },
     { label: 'Apple Music', url: 'https://music.apple.com/album/6827373198?i=6827373199' },
+    { label: 'YouTube Music', url: 'https://music.youtube.com/watch?v=BMgfUui0EoM' },
   ],
 };
 
