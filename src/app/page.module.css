@@ -2,9 +2,10 @@
    HOMEPAGE — link-in-bio one-pager, mobile first
    ============================================== */
 .page {
+  --page-glow: 240, 82, 122;
   min-height: 100vh;
   background:
-    radial-gradient(60vmax 40vmax at 50% 18rem, rgba(240, 82, 122, 0.14), transparent 70%),
+    radial-gradient(60vmax 40vmax at 50% 18rem, rgba(var(--page-glow), 0.14), transparent 70%),
     var(--background);
   color: var(--foreground);
   font-family: var(--font-dm-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -74,10 +75,24 @@
 
 /* ---------- Featured release ---------- */
 .hero {
+  --accent: var(--pink);
+  --accent-light: var(--pink-light);
+  --accent-rgb: 240, 82, 122;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+/* Warm red glow matching the Mama Ay cover */
+.pageEmber {
+  --page-glow: 229, 80, 47;
+}
+
+.heroEmber {
+  --accent: var(--ember);
+  --accent-light: var(--ember-light);
+  --accent-rgb: 229, 80, 47;
 }
 
 .label {
@@ -93,14 +108,14 @@
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--pink-light);
-  box-shadow: 0 0 5px 1px var(--pink), 0 0 12px 3px rgba(240, 82, 122, 0.18);
+  background: var(--accent-light);
+  box-shadow: 0 0 5px 1px var(--accent), 0 0 12px 3px rgba(var(--accent-rgb), 0.18);
   animation: glow 6s ease-in-out infinite;
 }
 
 /* Slow, subtle breathing glow (CSS only, no extra load) */
 @keyframes glow {
-  50% { box-shadow: 0 0 12px 3px var(--pink), 0 0 30px 9px rgba(240, 82, 122, 0.4); }
+  50% { box-shadow: 0 0 12px 3px var(--accent), 0 0 30px 9px rgba(var(--accent-rgb), 0.4); }
 }
 
 .coverWrap {
@@ -108,13 +123,33 @@
   aspect-ratio: 1;
   border-radius: 6px;
   overflow: hidden;
-  box-shadow: 0 30px 80px -20px rgba(240, 82, 122, 0.35), 0 0 0 1px var(--line);
+  box-shadow: 0 30px 80px -20px rgba(var(--accent-rgb), 0.35), 0 0 0 1px var(--line);
 }
 
 .cover {
   width: 100%;
   height: 100%;
   display: block;
+}
+
+/* Cover linking to the release page (homepage only) */
+.coverLink {
+  display: block;
+  height: 100%;
+}
+
+.coverLink .cover {
+  transition: transform 0.4s ease;
+}
+
+.coverLink:hover .cover {
+  transform: scale(1.02);
+}
+
+.heroAbout {
+  max-width: 34rem;
+  margin: 0 0 1.75rem;
+  line-height: 1.55;
 }
 
 /* Preview player on the cover */
@@ -225,6 +260,7 @@
   font-size: clamp(2.4rem, 11vw, 4rem);
   line-height: 0.95;
   letter-spacing: -0.01em;
+  word-spacing: 0.15em;
   text-transform: uppercase;
   margin: 1.75rem 0 1.75rem;
 }

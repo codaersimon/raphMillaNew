@@ -6,7 +6,7 @@ import GetNotified from '../GetNotified';
 import { SiteFooter, SiteHeader } from '../Site';
 import { thatOneGirl } from '../releases';
 
-// Standalone release page: only reachable by its link, not linked from the homepage.
+// Standalone release page, linked from the homepage cover and the releases grid.
 const description = 'That One Girl by Raph Milla. Out now on Spotify, Apple Music, YouTube Music, Amazon Music and Bandcamp.';
 
 export const metadata: Metadata = {

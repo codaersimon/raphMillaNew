@@ -1,13 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Short spellings people might type for the release page
+  // Short spellings people might type for the release pages
   async redirects() {
-    return ['/thatonegirl', '/that1girl', '/tog'].map((source) => ({
-      source,
-      destination: '/that-one-girl',
-      permanent: true,
-    }));
+    const pages: Record<string, string[]> = {
+      '/that-one-girl': ['/thatonegirl', '/that1girl', '/tog'],
+      '/mama-ay': ['/mamaay', '/mama'],
+    };
+    return Object.entries(pages).flatMap(([destination, sources]) =>
+      sources.map((source) => ({ source, destination, permanent: true })),
+    );
   },
 };
 

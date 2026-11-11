@@ -106,7 +106,7 @@ export default function RootLayout({
                 "https://soundcloud.com/raphmilla"
               ],
               "jobTitle": "DJ & Producer",
-              "genre": ["House", "Tech House", "Electronic Music"],
+              "genre": ["House", "Afro House", "Tech House", "Electronic Music"],
               "address": {
                 "@type": "PostalAddress",
                 "addressLocality": "Hannover",

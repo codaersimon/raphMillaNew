@@ -2,13 +2,24 @@
 
 import { useEffect, useRef, useState, type KeyboardEvent, type PointerEvent } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import styles from './page.module.css';
 
 const formatTime = (s: number) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;
 
 // Cover with a play button and a seekable progress bar for a short self-hosted preview clip.
 // The audio file only loads on first play.
-export default function CoverPlayer({ cover, title, preview }: { cover: string; title: string; preview?: string }) {
+export default function CoverPlayer({
+  cover,
+  title,
+  preview,
+  href,
+}: {
+  cover: string;
+  title: string;
+  preview?: string;
+  href?: string;
+}) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const barRef = useRef<HTMLDivElement>(null);
   const [playing, setPlaying] = useState(false);
@@ -76,7 +87,13 @@ export default function CoverPlayer({ cover, title, preview }: { cover: string; 
 
   return (
     <div className={styles.coverWrap}>
-      <Image src={cover} alt={`${title} cover`} width={800} height={800} className={styles.cover} priority />
+      {href ? (
+        <Link href={href} className={styles.coverLink} aria-label={`About ${title}`}>
+          <Image src={cover} alt={`${title} cover`} width={800} height={800} className={styles.cover} priority />
+        </Link>
+      ) : (
+        <Image src={cover} alt={`${title} cover`} width={800} height={800} className={styles.cover} priority />
+      )}
       {preview && (
         <>
           <audio ref={audioRef} src={preview} preload="none" />

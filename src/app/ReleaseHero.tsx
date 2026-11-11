@@ -4,18 +4,33 @@ import type { FeaturedRelease } from './releases';
 
 // Cover, title, streaming rows and Bandcamp button — used on the homepage and on release pages.
 // Only the first release on a page is the h1; further ones are h2.
-export default function ReleaseHero({ release, primary = true }: { release: FeaturedRelease; primary?: boolean }) {
+// On the homepage (linked) the cover leads to the release page; the release page shows the about text.
+export default function ReleaseHero({
+  release,
+  primary = true,
+  linked = false,
+}: {
+  release: FeaturedRelease;
+  primary?: boolean;
+  linked?: boolean;
+}) {
   const Heading = primary ? 'h1' : 'h2';
   const titleId = `${release.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-title`;
   return (
-    <section className={styles.hero} aria-labelledby={titleId}>
+    <section className={`${styles.hero} ${release.accent === 'ember' ? styles.heroEmber : ''}`} aria-labelledby={titleId}>
       <p className={styles.label}>
         <span className={styles.glowDot} aria-hidden="true" />
         {release.label}
       </p>
-      <CoverPlayer cover={release.cover} title={release.title} preview={release.preview} />
+      <CoverPlayer
+        cover={release.cover}
+        title={release.title}
+        preview={release.preview}
+        href={linked ? release.page : undefined}
+      />
       <Heading id={titleId} className={styles.heroTitle}>{release.title}</Heading>
       {release.artists && <p className={styles.heroArtists}>{release.artists}</p>}
+      {!linked && release.about && <p className={styles.heroAbout}>{release.about}</p>}
 
       <ul className={styles.streamList}>
         {release.stream.map((s, i) => (

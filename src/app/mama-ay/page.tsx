@@ -6,8 +6,8 @@ import GetNotified from '../GetNotified';
 import { SiteFooter, SiteHeader } from '../Site';
 import { mamaAy } from '../releases';
 
-// Standalone release page, linked from the releases grid on the homepage.
-const description = 'Mama Ay by Dixxa & Raph Milla. Out now on Spotify and Apple Music.';
+// Standalone release page, linked from the homepage cover and the releases grid.
+const description = 'Mama Ay by Dixxa & Raph Milla: an Afro house collaboration with Sri Lankan DJ and producer Dixxa. Out now on Spotify and Apple Music.';
 
 export const metadata: Metadata = {
   title: 'Mama Ay – Dixxa & Raph Milla',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
 
 export default function MamaAy() {
   return (
-    <div className={`${dmSans.variable} ${styles.page}`}>
+    <div className={`${dmSans.variable} ${styles.page} ${styles.pageEmber}`}>
       <main className={styles.main}>
         <SiteHeader />
         <ReleaseHero release={mamaAy} />

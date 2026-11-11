@@ -9,13 +9,13 @@ import { featured, playlist, releases, sets } from './releases';
 
 export default function Home() {
   return (
-    <div className={`${dmSans.variable} ${styles.page}`}>
+    <div className={`${dmSans.variable} ${styles.page} ${styles.pageEmber}`}>
       <main className={styles.main}>
         <SiteHeader />
 
         {/* Featured releases: the reason most visitors are here */}
         {featured.map((r, i) => (
-          <ReleaseHero key={r.title} release={r} primary={i === 0} />
+          <ReleaseHero key={r.title} release={r} primary={i === 0} linked />
         ))}
 
         <GetNotified />

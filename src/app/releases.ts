@@ -19,6 +19,12 @@ export type FeaturedRelease = {
   title: string;
   // Credit line under the title, for collaborations
   artists?: string;
+  // Own release page; the homepage cover links there
+  page?: string;
+  // Short text shown on the release page
+  about?: string;
+  // Glow colour around label dot and cover; pink by default
+  accent?: 'ember';
   label: string;
   cover: string;
   stream: StreamLink[];
@@ -33,6 +39,7 @@ export type FeaturedRelease = {
 // Also served on its own at /that-one-girl
 export const thatOneGirl: FeaturedRelease = {
   title: 'That One Girl',
+  page: '/that-one-girl',
   label: 'Out now',
   cover: '/releases/that-one-girl.jpg',
   stream: [
@@ -51,6 +58,9 @@ export const thatOneGirl: FeaturedRelease = {
 export const mamaAy: FeaturedRelease = {
   title: 'Mama Ay',
   artists: 'Dixxa & Raph Milla',
+  page: '/mama-ay',
+  about: 'An Afro house collaboration between Raph Milla and Dixxa, a DJ and producer from Sri Lanka.',
+  accent: 'ember',
   label: 'Out now',
   cover: '/releases/mama-ay.jpg',
   stream: [
