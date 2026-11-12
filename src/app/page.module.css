@@ -268,15 +268,17 @@
 .slideTitle {
   font-family: var(--font-clash-display);
   font-weight: bold;
-  font-size: clamp(1.9rem, 8vw, 3.2rem);
-  line-height: 0.95;
+  /* Small enough that titles like "That One Girl" stay on one line under a 400px cover */
+  font-size: 2.3rem;
+  line-height: 1;
   word-spacing: 0.15em;
   text-transform: uppercase;
-  margin: 1.5rem 0 0.6rem;
+  margin: 1.25rem 0 0.5rem;
 }
 
 .slideArtists {
-  color: var(--muted);
+  color: var(--foreground);
+  opacity: 0.75;
 }
 
 .carouselArrow {
