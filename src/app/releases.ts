@@ -25,7 +25,9 @@ export type FeaturedRelease = {
   // Own release page; the homepage cover links there
   page?: string;
   // Short text shown on the release page
-  about?: string;
+  about?: string[];
+  // Names in the about text that link somewhere, e.g. a collaborator's Instagram
+  aboutLinks?: Record<string, string>;
   // Glow colour around label dot and cover; pink by default
   accent?: 'ember';
   label: string;
@@ -58,7 +60,12 @@ export const mamaAy: FeaturedRelease = {
   title: 'Mama Ay',
   artists: 'Dixxa & Raph Milla',
   page: '/mama-ay',
-  about: 'An Afro house collaboration between Raph Milla and Dixxa, a DJ and producer from Sri Lanka.',
+  about: [
+    'It’s that moment when the lights drop and a voice cuts through the room. Soft, breathy, in Spanish, almost like a whisper. Then the whole crowd answers back.',
+    'Mama Ay is a collab between my friend Dixxa and me. A deep, rolling bassline, a little pluck that won’t leave your head, and a choir that turns the drop into something you shout with your hands up.',
+    'Made for warm nights, sweaty floors and the friends next to you.',
+  ],
+  aboutLinks: { Dixxa: 'https://www.instagram.com/dixxa._/' },
   accent: 'ember',
   label: 'Out now',
   cover: '/releases/mama-ay.jpg',

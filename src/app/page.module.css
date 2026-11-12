@@ -368,6 +368,15 @@
   max-width: 34rem;
   margin: 0 0 1.75rem;
   line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.heroAbout a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* Preview player on the cover */

@@ -1,3 +1,4 @@
+import type { ReactNode } from 'react';
 import styles from './page.module.css';
 import CoverPlayer from './CoverPlayer';
 import type { FeaturedRelease } from './releases';
@@ -23,6 +24,20 @@ export function ReleaseLinks({ release }: { release: FeaturedRelease }) {
           Buy on Bandcamp
         </a>
       )}
+    </>
+  );
+}
+
+// Turns the first mention of each linked name into a link; names without a url stay plain text.
+function withLinks(text: string, links: Record<string, string> = {}): ReactNode {
+  const name = Object.keys(links).find((n) => links[n] && text.includes(n));
+  if (!name) return text;
+  const i = text.indexOf(name);
+  return (
+    <>
+      {text.slice(0, i)}
+      <a href={links[name]} target="_blank" rel="noopener noreferrer">{name}</a>
+      {withLinks(text.slice(i + name.length), { ...links, [name]: '' })}
     </>
   );
 }
@@ -55,7 +70,13 @@ export default function ReleaseHero({
       />
       <Heading id={titleId} className={styles.heroTitle}>{release.title}</Heading>
       {release.artists && <p className={styles.heroArtists}>{release.artists}</p>}
-      {!linked && release.about && <p className={styles.heroAbout}>{release.about}</p>}
+      {!linked && release.about && (
+        <div className={styles.heroAbout}>
+          {release.about.map((text) => (
+            <p key={text}>{withLinks(text, release.aboutLinks)}</p>
+          ))}
+        </div>
+      )}
       <ReleaseLinks release={release} />
     </section>
   );
