@@ -12,6 +12,9 @@ export type Release = {
   glow?: { x: number; y: number; size: number };
 };
 
+// Buy buttons lead to the Bandcamp profile, where fans pick the version they want.
+const BANDCAMP = 'https://raphmilla.bandcamp.com';
+
 // HyperFollow lists every store until the direct store links are known.
 const THAT_ONE_GIRL_HYPERFOLLOW = 'https://distrokid.com/hyperfollow/raphmilla/that-one-girl';
 
@@ -28,10 +31,8 @@ export type FeaturedRelease = {
   label: string;
   cover: string;
   stream: StreamLink[];
-  visualizer?: string;
+  // Bandcamp page; all versions (e.g. extended mixes) are picked there
   bandcamp?: string;
-  // Bandcamp page of the DJ-friendly extended mix; hidden until set
-  extended?: string;
   // Short self-hosted clip played from the cover
   preview?: string;
 };
@@ -48,9 +49,7 @@ export const thatOneGirl: FeaturedRelease = {
     { label: 'YouTube Music', url: THAT_ONE_GIRL_HYPERFOLLOW },
     { label: 'Amazon Music', url: THAT_ONE_GIRL_HYPERFOLLOW },
   ],
-  visualizer: 'https://www.youtube.com/watch?v=vneQSKmNQYM',
-  bandcamp: 'https://raphmilla.bandcamp.com/track/that-one-girl',
-  extended: 'https://raphmilla.bandcamp.com/track/that-one-girl-extended-version',
+  bandcamp: BANDCAMP,
   preview: '/audio/that-one-girl-preview.m4a',
 };
 
@@ -69,7 +68,7 @@ export const mamaAy: FeaturedRelease = {
     { label: 'YouTube Music', url: 'https://music.youtube.com/watch?v=BMgfUui0EoM' },
     { label: 'Amazon Music', url: 'https://music.amazon.de/albums/B0HPF4QPPT?trackAsin=B0HPFB7J4Q' },
   ],
-  bandcamp: 'https://raphmilla.bandcamp.com/track/mama-ay',
+  bandcamp: BANDCAMP,
 };
 
 // Releases shown at the top of the homepage, newest first
@@ -149,9 +148,9 @@ export const releases: Release[] = [
 // Entries without a url are hidden until the link is known.
 // handle is shown next to the name in the socials list at the bottom of the homepage.
 export const socials = [
-  { label: 'Instagram', handle: '@raphmillamusic', url: 'https://www.instagram.com/raphmillamusic/', icon: '/icons/instagram.svg' },
-  { label: 'TikTok', handle: '@raphmilla', url: 'https://www.tiktok.com/@raphmilla', icon: '/icons/tiktok.svg' },
-  { label: 'YouTube', handle: '@raphmilla', url: 'https://www.youtube.com/@raphmilla', icon: '/icons/youtube.svg' },
+  { label: 'Instagram', handle: 'raphmillamusic', url: 'https://www.instagram.com/raphmillamusic/', icon: '/icons/instagram.svg' },
+  { label: 'TikTok', handle: 'raphmilla', url: 'https://www.tiktok.com/@raphmilla', icon: '/icons/tiktok.svg' },
+  { label: 'YouTube', handle: 'raphmilla', url: 'https://www.youtube.com/@raphmilla', icon: '/icons/youtube.svg' },
   { label: 'SoundCloud', handle: 'raphmilla', url: 'https://soundcloud.com/raphmilla', icon: '/icons/soundcloud.svg' },
   { label: 'Spotify', handle: 'Raph Milla', url: 'https://open.spotify.com/artist/7tIcunX6ryBI3VpYv4UNZA', icon: '/icons/spotify.svg' },
   { label: 'Apple Music', handle: 'Raph Milla', url: 'https://music.apple.com/artist/6823780521', icon: '/icons/applemusic.svg' },

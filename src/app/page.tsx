@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import styles from './page.module.css';
 import { dmSans } from './fonts';
+import FeaturedCarousel from './FeaturedCarousel';
 import ReleaseHero from './ReleaseHero';
 import GetNotified from './GetNotified';
 import SetPlayer from './SetPlayer';
@@ -13,10 +14,16 @@ export default function Home() {
       <main className={styles.main}>
         <SiteHeader />
 
-        {/* Featured releases: the reason most visitors are here */}
-        {featured.map((r, i) => (
-          <ReleaseHero key={r.title} release={r} primary={i === 0} linked />
-        ))}
+        {/* Featured releases: the reason most visitors are here.
+            Phones: stacked below each other. Desktop: one swipeable carousel. */}
+        <div className={styles.mobileOnly}>
+          {featured.map((r, i) => (
+            <ReleaseHero key={r.title} release={r} primary={i === 0} linked />
+          ))}
+        </div>
+        <div className={styles.desktopOnly}>
+          <FeaturedCarousel releases={featured} />
+        </div>
 
         <GetNotified />
 

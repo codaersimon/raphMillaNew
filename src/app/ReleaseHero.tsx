@@ -2,9 +2,34 @@ import styles from './page.module.css';
 import CoverPlayer from './CoverPlayer';
 import type { FeaturedRelease } from './releases';
 
-// Cover, title, streaming rows and Bandcamp button — used on the homepage and on release pages.
-// Only the first release on a page is the h1; further ones are h2.
-// On the homepage (linked) the cover leads to the release page; the release page shows the about text.
+// Streaming rows and Bandcamp button of a release.
+export function ReleaseLinks({ release }: { release: FeaturedRelease }) {
+  return (
+    <>
+      <ul className={styles.streamList}>
+        {release.stream.map((s, i) => (
+          <li key={s.label}>
+            <a href={s.url} className={styles.streamRow} target="_blank" rel="noopener noreferrer">
+              <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
+              <span className={styles.rowLabel}>{s.label}</span>
+              <span className={styles.rowArrow} aria-hidden="true">↗</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {release.bandcamp && (
+        <a href={release.bandcamp} className={styles.buyButton} target="_blank" rel="noopener noreferrer">
+          Buy on Bandcamp
+        </a>
+      )}
+    </>
+  );
+}
+
+// Cover, title, about text and links of one release — the top of each release page,
+// and stacked on the homepage on phones. Only the first release on a page is the h1.
+// On the homepage (linked) the cover leads to the release page instead of showing the about text.
 export default function ReleaseHero({
   release,
   primary = true,
@@ -31,34 +56,7 @@ export default function ReleaseHero({
       <Heading id={titleId} className={styles.heroTitle}>{release.title}</Heading>
       {release.artists && <p className={styles.heroArtists}>{release.artists}</p>}
       {!linked && release.about && <p className={styles.heroAbout}>{release.about}</p>}
-
-      <ul className={styles.streamList}>
-        {release.stream.map((s, i) => (
-          <li key={s.label}>
-            <a href={s.url} className={styles.streamRow} target="_blank" rel="noopener noreferrer">
-              <span className={styles.rowIndex}>{String(i + 1).padStart(2, '0')}</span>
-              <span className={styles.rowLabel}>{s.label}</span>
-              <span className={styles.rowArrow} aria-hidden="true">↗</span>
-            </a>
-          </li>
-        ))}
-      </ul>
-
-      {release.bandcamp && (
-        <a href={release.bandcamp} className={styles.buyButton} target="_blank" rel="noopener noreferrer">
-          Buy on Bandcamp
-        </a>
-      )}
-      {release.extended && (
-        <a href={release.extended} className={styles.extendedLink} target="_blank" rel="noopener noreferrer">
-          Extended version for DJs ↗
-        </a>
-      )}
-      {release.visualizer && (
-        <a href={release.visualizer} className={styles.textLink} target="_blank" rel="noopener noreferrer">
-          Watch the visualizer ↗
-        </a>
-      )}
+      <ReleaseLinks release={release} />
     </section>
   );
 }
