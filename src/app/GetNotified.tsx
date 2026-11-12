@@ -48,7 +48,7 @@ export default function GetNotified() {
 
   return (
     <section className={styles.notify} aria-labelledby="notify-title">
-      <h2 id="notify-title" className={styles.notifyTitle}>Get notified</h2>
+      <h2 id="notify-title" className={styles.notifyTitle}>Inner circle</h2>
       <p className={styles.notifyText}>Be the first to hear when new music drops.</p>
       <form className={styles.notifyForm} onSubmit={onSubmit} noValidate>
         <label htmlFor="notify-email" className={styles.srOnly}>Email address</label>

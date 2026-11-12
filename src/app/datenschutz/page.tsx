@@ -26,7 +26,7 @@ export default function Datenschutz() {
 
             <h3>Datenerfassung auf dieser Website</h3>
             <p>
-              Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools. Personenbezogene Daten werden nur verarbeitet, wenn Sie sich für den Newsletter anmelden („Get notified“), ein eingebettetes Video aktiv starten oder mir eine E-Mail schreiben. Schriften und Bilder werden direkt von dieser Website geladen, nicht von Drittanbietern.
+              Diese Website verwendet keine Cookies und keine Analyse- oder Tracking-Tools. Personenbezogene Daten werden nur verarbeitet, wenn Sie sich für den Newsletter anmelden („Inner circle“), ein eingebettetes Video aktiv starten oder mir eine E-Mail schreiben. Schriften und Bilder werden direkt von dieser Website geladen, nicht von Drittanbietern.
             </p>
 
             <h2>2. Hosting</h2>
@@ -76,9 +76,9 @@ export default function Datenschutz() {
               <br />
               Diese Daten dienen der technischen Sicherheit und werden nicht mit anderen Datenquellen zusammengeführt.</p>
 
-            <h3>Newsletter („Get notified“) über Brevo</h3>
+            <h3>Newsletter („Inner circle“) über Brevo</h3>
             <p>
-              Wenn Sie sich über das Formular „Get notified“ anmelden, informiere ich Sie per E-Mail über neue Musik und Releases. Für den Versand nutze ich Brevo, einen Dienst der Sendinblue SAS (Brevo), 106 boulevard Haussmann, 75008 Paris, Frankreich. Ihre Daten werden auf Servern in der EU gespeichert.
+              Wenn Sie sich über das Formular „Inner circle“ anmelden, informiere ich Sie per E-Mail über neue Musik und Releases. Für den Versand nutze ich Brevo, einen Dienst der Sendinblue SAS (Brevo), 106 boulevard Haussmann, 75008 Paris, Frankreich. Ihre Daten werden auf Servern in der EU gespeichert.
             </p>
             <p>
               Verarbeitet werden Ihre E-Mail-Adresse sowie Zeitpunkt und IP-Adresse der Anmeldung und der Bestätigung. Erst wenn Sie das Formular absenden, wird eine Verbindung zu Brevo hergestellt. Die Anmeldung erfolgt im Double-Opt-in-Verfahren: Sie erhalten eine E-Mail mit einem Bestätigungslink und werden erst nach dem Klick darauf in die Liste aufgenommen. So kann sich niemand mit fremden E-Mail-Adressen anmelden.

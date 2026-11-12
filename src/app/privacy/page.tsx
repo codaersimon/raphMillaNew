@@ -27,7 +27,7 @@ export default function Privacy() {
 
             <h3>Data collection on this website</h3>
             <p>
-              This website does not use cookies or any analytics or tracking tools. Personal data is only processed if you sign up for the newsletter (“Get notified”), actively start an embedded video, or send me an email. Fonts and images are loaded directly from this website, not from third parties.
+              This website does not use cookies or any analytics or tracking tools. Personal data is only processed if you sign up for the newsletter (“Inner circle”), actively start an embedded video, or send me an email. Fonts and images are loaded directly from this website, not from third parties.
             </p>
 
             <h2>2. Hosting</h2>
@@ -77,9 +77,9 @@ export default function Privacy() {
               <br />
               This data is used for technical security and is not combined with other data sources.</p>
 
-            <h3>Newsletter (“Get notified”) via Brevo</h3>
+            <h3>Newsletter (“Inner circle”) via Brevo</h3>
             <p>
-              If you sign up via the “Get notified” form, I will inform you by email about new music and releases. Emails are sent using Brevo, a service of Sendinblue SAS (Brevo), 106 boulevard Haussmann, 75008 Paris, France. Your data is stored on servers in the EU.
+              If you sign up via the “Inner circle” form, I will inform you by email about new music and releases. Emails are sent using Brevo, a service of Sendinblue SAS (Brevo), 106 boulevard Haussmann, 75008 Paris, France. Your data is stored on servers in the EU.
             </p>
             <p>
               Your email address and the time and IP address of your sign-up and confirmation are processed. A connection to Brevo is only established when you submit the form. Sign-up uses a double opt-in process: you receive an email with a confirmation link and are only added to the list after clicking it. This prevents anyone from signing up with someone else’s email address.
