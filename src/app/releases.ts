@@ -69,6 +69,7 @@ export const mamaAy: FeaturedRelease = {
     { label: 'YouTube Music', url: 'https://music.youtube.com/watch?v=BMgfUui0EoM' },
     { label: 'Amazon Music', url: 'https://music.amazon.de/albums/B0HPF4QPPT?trackAsin=B0HPFB7J4Q' },
   ],
+  bandcamp: 'https://raphmilla.bandcamp.com/track/mama-ay',
 };
 
 // Releases shown at the top of the homepage, newest first
