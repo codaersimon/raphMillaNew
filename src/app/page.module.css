@@ -75,6 +75,72 @@
   transform: translateY(-2px);
 }
 
+/* Desktop: Socials button with fold-out icons */
+.socialsMenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialsToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--foreground);
+  font-family: var(--font-clash-display);
+  font-weight: bold;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.socialsToggle svg {
+  transition: transform 0.25s;
+}
+
+.socialsToggle[aria-expanded='true'] {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.socialsToggle[aria-expanded='true'] svg {
+  transform: rotate(180deg);
+}
+
+/* Floats over the page so nothing below jumps; padding-top bridges the gap for the mouse */
+.socialsPanel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 10;
+  padding-top: 0.6rem;
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -6px);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.socialsToggle[aria-expanded='true'] + .socialsPanel {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, 0);
+}
+
+.socialsPanel .socials {
+  padding: 0.5rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(11, 11, 8, 0.92);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.7);
+}
+
 /* ---------- Featured release ---------- */
 .hero {
   --accent: var(--pink);
@@ -138,6 +204,10 @@
 /* display: contents keeps the stacked heroes spaced by .main's gap */
 .mobileOnly {
   display: contents;
+}
+
+.mobileOnlyFlex {
+  display: flex;
 }
 
 .desktopOnly {
@@ -272,7 +342,8 @@
     display: grid;
   }
 
-  .mobileOnly {
+  .mobileOnly,
+  .mobileOnlyFlex {
     display: none;
   }
 
