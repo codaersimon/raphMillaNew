@@ -6,12 +6,14 @@ import styles from './page.module.css';
 import { socials } from './releases';
 
 // Desktop header: a "Socials" button whose icons fold out on hover. A click pins them open
-// until the visitor scrolls or clicks somewhere else.
+// until the visitor clicks the button again, scrolls or clicks somewhere else.
 export default function SocialsMenu() {
   const [hover, setHover] = useState(false);
   const [pinned, setPinned] = useState(false);
+  // After closing with a click, hovering doesn't reopen until the mouse has left once
+  const [hoverBlocked, setHoverBlocked] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
-  const open = hover || pinned;
+  const open = pinned || (hover && !hoverBlocked);
 
   useEffect(() => {
     if (!pinned) return;
@@ -32,14 +34,20 @@ export default function SocialsMenu() {
       ref={ref}
       className={styles.socialsMenu}
       onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)}
+      onMouseLeave={() => {
+        setHover(false);
+        setHoverBlocked(false);
+      }}
     >
       <button
         type="button"
         className={styles.socialsToggle}
         aria-expanded={open}
         aria-controls="header-socials"
-        onClick={() => setPinned((p) => !p)}
+        onClick={() => {
+          setHoverBlocked(pinned);
+          setPinned(!pinned);
+        }}
       >
         Socials
         <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true">
