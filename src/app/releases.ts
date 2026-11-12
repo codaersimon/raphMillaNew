@@ -147,13 +147,14 @@ export const releases: Release[] = [
 ];
 
 // Entries without a url are hidden until the link is known.
+// handle is shown next to the name in the socials list at the bottom of the homepage.
 export const socials = [
-  { label: 'Instagram', url: 'https://www.instagram.com/raphmillamusic/', icon: '/icons/instagram.svg' },
-  { label: 'TikTok', url: 'https://www.tiktok.com/@raphmilla', icon: '/icons/tiktok.svg' },
-  { label: 'YouTube', url: 'https://www.youtube.com/@raphmilla', icon: '/icons/youtube.svg' },
-  { label: 'SoundCloud', url: 'https://soundcloud.com/raphmilla', icon: '/icons/soundcloud.svg' },
-  { label: 'Spotify', url: 'https://open.spotify.com/artist/7tIcunX6ryBI3VpYv4UNZA', icon: '/icons/spotify.svg' },
-  { label: 'Apple Music', url: 'https://music.apple.com/artist/6823780521', icon: '/icons/applemusic.svg' },
+  { label: 'Instagram', handle: '@raphmillamusic', url: 'https://www.instagram.com/raphmillamusic/', icon: '/icons/instagram.svg' },
+  { label: 'TikTok', handle: '@raphmilla', url: 'https://www.tiktok.com/@raphmilla', icon: '/icons/tiktok.svg' },
+  { label: 'YouTube', handle: '@raphmilla', url: 'https://www.youtube.com/@raphmilla', icon: '/icons/youtube.svg' },
+  { label: 'SoundCloud', handle: 'raphmilla', url: 'https://soundcloud.com/raphmilla', icon: '/icons/soundcloud.svg' },
+  { label: 'Spotify', handle: 'Raph Milla', url: 'https://open.spotify.com/artist/7tIcunX6ryBI3VpYv4UNZA', icon: '/icons/spotify.svg' },
+  { label: 'Apple Music', handle: 'Raph Milla', url: 'https://music.apple.com/artist/6823780521', icon: '/icons/applemusic.svg' },
 ];
 
 export const playlist = {

@@ -310,6 +310,17 @@
   color: var(--gold);
 }
 
+/* Socials list near the bottom of the homepage */
+.socialRowIcon {
+  flex-shrink: 0;
+  margin: 0 0.35rem 0 0.1rem;
+}
+
+.socialHandle {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .buyButton {
   width: 100%;
   margin-top: 1.5rem;
